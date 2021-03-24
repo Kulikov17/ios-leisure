@@ -9,14 +9,16 @@ import UIKit
 
 class ListTVC: UITableViewController {
     
-    var  EntertainmentList = [Entertainment]()
+    var  entertainments = [Entertainment]()
     
 
     override func viewDidLoad() {
-        EntertainmentList += [
+        
+        super.viewDidLoad()
+        
+        entertainments += [
         Entertainment(name: "Концерт Bring Me The Horizon",
         type: "Музыка",
-        imagePath: "bmth",
         info: """
         29 мая 2021-го года в Москве на арене спортивного комплекса «Мегаспорт» состоится концерт британской рок-группы «Bring Me the Horizon».
         
@@ -27,24 +29,24 @@ class ListTVC: UITableViewController {
         В рамках предстоящего концерта фанаты Bring Me the Horizon в России услышат и старые работы рок-группы и новые композиции, в том числе и композиции с нового мини-альбома «Post Human: Survival Horror», увидевшего свет в октябре 2020-го года.
 
         Скандальные рокеры отправляются в тур в поддержку своих последних пластинок. Не пропустите встречу с ними!
-        """),
+        """,
+        imagePath: "bmth"),
             
         Entertainment(name: "Айнбо. Сердце Амазонии",
         type: "Мультфильм",
-        imagePath: "aibo",
         info: """
         Бесстрашная Айнбо родилась и выросла в таинственных амазонских джунглях. Узнав, что её родному поселку грозит опасность, наша героиня, дочь вождя, тотчас отправляется за помощью в компании удивительных зверей. Их ждёт восхождение к пылающему вулкану, встреча с могущественным духом Амазонии и схватка с мифическим чудовищем.
-        """),
+        """,
+        imagePath: "aibo"),
             
         Entertainment(name: "Бэтмен против Брежнева",
         type: "Театр",
-        imagePath: "bpb",
         info: """
         Спектакль Денисовой – фантазия о том, как Бэтмен жил бы в эпоху застоя, будь он советским гражданином. «У него была бы семья в виде жены и дочери, которых он очень любит. Терпел бы наезды тещи. Ходил бы на работу в многотиражку Готэма и писал статьи о том, как соцсоревнование вызывает отклик у миллионов советских людей», – комментирует автор спектакля Саша Денисова.
-        """),
+        """,
+        imagePath: "bpb"),
         ]
 
-        super.viewDidLoad()
         
 
         // Uncomment the following line to preserve selection between presentations
@@ -61,11 +63,34 @@ class ListTVC: UITableViewController {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let detailVC = storyboard.instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
+
+        let el = self.entertainments[indexPath.row]
+
+        //detailVC.entertainment = el
+        
+        navigationController?.pushViewController(detailVC, animated: true)
+        
+        
+    }
+    
+//    if segue.identifier == "goDetail"
+//    {
+//        // Здесь объектом sender является ячейка, на которую нажимает юзер
+//        // Получаем indexPath выбранной ячейки с помощью метода indexPathForCell:
+//        let indexPath = self.tableView.indexPath(for: (sender as! UITableViewCell))
+//        let el = self.entertainments[indexPath!.row]
+//        let detailVC: DetailVC = segue.destination as! DetailVC
+//        detailVC.entertainment = el
+//    }
 
     //запрашивает количество ячеек, которые должны отображаться у каждой секции;
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return EntertainmentList.count
+        return entertainments.count
     }
 
     // запрашивает саму ячейку, для конкретной секции.
@@ -74,8 +99,8 @@ class ListTVC: UITableViewController {
         // Это тот самый идентификатор, который мы задали ячейке в сториборде
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        // Получаем объект Product под индексом равным значению indexPath.row
-        let el: Entertainment = self.EntertainmentList[indexPath.row]
+        // Получаем объект под индексом равным значению indexPath.row
+        let el: Entertainment = self.entertainments[indexPath.row]
         
         cell.imageView?.image = el.getImage()
         cell.textLabel?.text = el.name
@@ -84,17 +109,6 @@ class ListTVC: UITableViewController {
         return cell
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goDetail"
-        {
-            // Здесь объектом sender является ячейка, на которую нажимает юзер
-            // Получаем indexPath выбранной ячейки с помощью метода indexPathForCell:
-            let indexPath = self.tableView.indexPath(for: (sender as! UITableViewCell))
-            let el = self.EntertainmentList[indexPath!.row]
-            let detailVC: DetailVC = segue.destination as! DetailVC
-            detailVC.entertainment = el
-        }
-    }
 
 
     /*

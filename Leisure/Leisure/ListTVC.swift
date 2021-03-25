@@ -68,7 +68,7 @@ class ListTVC: UITableViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let detailVC = storyboard.instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
 
-        let el = self.entertainments[indexPath.row]
+        //let el = self.entertainments[indexPath.row]
 
         //detailVC.entertainment = el
         

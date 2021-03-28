@@ -4,8 +4,7 @@
 //
 //  Created by LyubaxaPro on 21.03.2021.
 //
-
-import UIKit
+/*import UIKit
 
 class DetailVC: UIViewController {
   
@@ -31,4 +30,4 @@ class DetailVC: UIViewController {
     }
     
 
-}
+}*/

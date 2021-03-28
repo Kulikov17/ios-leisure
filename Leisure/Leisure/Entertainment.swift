@@ -11,10 +11,10 @@ struct Entertainment{
     let name: String
     let type: String
     let info: String
-    let imagePath: String?
+    let imagePath: String
 
-    func getImage() -> UIImage? {
+    /*func getImage() -> UIImage? {
         return UIImage(named: imagePath ?? "")
-    }
+    }*/
 
 }

@@ -13,8 +13,8 @@ struct Entertainment{
     let info: String
     let imagePath: String
 
-    /*func getImage() -> UIImage? {
-        return UIImage(named: imagePath ?? "")
-    }*/
+    func getImage() -> UIImage? {
+        return UIImage(named: imagePath)
+    }
 
 }

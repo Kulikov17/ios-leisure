@@ -34,8 +34,8 @@ class EntertaimentTableViewCell: UITableViewCell {
         iconImageView.pin
             .bottom(8)
             .left(20)
-            .height(64)
-            .width(64)
+            .height(80)
+            .width(80)
         
         titleLabel.pin
           //  .bottom(8)
@@ -48,7 +48,7 @@ class EntertaimentTableViewCell: UITableViewCell {
     func configure(with model: Entertainment) {
         typeLabel.text = model.type
         titleLabel.text = model.name
-        iconImageView.image = UIImage(systemName: model.imagePath)
+        iconImageView.image = model.getImage()
     }
     
 }

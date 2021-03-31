@@ -47,8 +47,6 @@ class PosterViewController: UIViewController {
         title = "Афиша"
         tableView.delegate = self
         tableView.dataSource = self
-//        let HEADER_HEIGHT = 100
-//        tableView.tableHeaderView?.frame.size = CGSize(width: tableView.frame.width, height: CGFloat(HEADER_HEIGHT))
         tableView.register(EntertaimentTableViewCell.self, forCellReuseIdentifier: "EntertaimentTableViewCell")
         
         view.addSubview(tableView)
@@ -96,13 +94,14 @@ extension PosterViewController: UITableViewDataSource, UITableViewDelegate {
             }
         
         cell.layer.cornerRadius=20
+        
         //cell.layer.pin.margin(12)
 //        cell.layer.borderWidth = 8.0
 //        cell.layer.borderColor = UIColor.white.cgColor
         
       //  cell.widthAnchor.constraint(equalToConstant: 50).isActive = true
         //cell.imageView?.frame = cell.frame.offsetBy(dx: 100, dy: 100)
-        cell.configure(with: entertainments[indexPath.row])
+        cell.configure(with: entertainments[indexPath.section])
    
         return cell
     }

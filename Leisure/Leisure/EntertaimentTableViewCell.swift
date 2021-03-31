@@ -32,7 +32,7 @@ class EntertaimentTableViewCell: UITableViewCell {
         titleLabel.numberOfLines = 0
         iconImageView.layer.cornerRadius = 20
         iconImageView.clipsToBounds = true
-        backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
+        backgroundColor = UIColor.lightGray.withAlphaComponent(0.1)
         
         
         [titleLabel, iconImageView, costLabel, typeImage].forEach {

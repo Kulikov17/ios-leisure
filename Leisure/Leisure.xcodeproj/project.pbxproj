@@ -20,8 +20,6 @@
 		0AD0E59C260D1C2A00162BA3 /* PosterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD0E59B260D1C2A00162BA3 /* PosterViewController.swift */; };
 		0AD0E59F260D1C3F00162BA3 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD0E59E260D1C3F00162BA3 /* EventsViewController.swift */; };
 		0AD0E5A6260FD19E00162BA3 /* EntertaimentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD0E5A5260FD19E00162BA3 /* EntertaimentTableViewCell.swift */; };
-		0AD0E5AE26106D9700162BA3 /* ListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD0E5AD26106D9700162BA3 /* ListTVC.swift */; };
-		0AD0E5B126106DFD00162BA3 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD0E5B026106DFD00162BA3 /* DetailVC.swift */; };
 		7868F4C5BB4ED2DF6F52D5FB /* Pods_Leisure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F131F74AD215710F0D0DC869 /* Pods_Leisure.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,8 +39,6 @@
 		0AD0E59B260D1C2A00162BA3 /* PosterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterViewController.swift; sourceTree = "<group>"; };
 		0AD0E59E260D1C3F00162BA3 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		0AD0E5A5260FD19E00162BA3 /* EntertaimentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntertaimentTableViewCell.swift; sourceTree = "<group>"; };
-		0AD0E5AD26106D9700162BA3 /* ListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTVC.swift; sourceTree = "<group>"; };
-		0AD0E5B026106DFD00162BA3 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		74D4E4416603CAFD95483DF9 /* Pods-Leisure.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Leisure.release.xcconfig"; path = "Target Support Files/Pods-Leisure/Pods-Leisure.release.xcconfig"; sourceTree = "<group>"; };
 		8A7A7E6E01C3716AE3B96AC4 /* Pods-Leisure.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Leisure.debug.xcconfig"; path = "Target Support Files/Pods-Leisure/Pods-Leisure.debug.xcconfig"; sourceTree = "<group>"; };
 		F131F74AD215710F0D0DC869 /* Pods_Leisure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Leisure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,8 +82,6 @@
 				0439A6F92607A98D001E8955 /* ViewController.swift */,
 				0AD0E598260D1BFD00162BA3 /* ProfileViewController.swift */,
 				0AD0E59B260D1C2A00162BA3 /* PosterViewController.swift */,
-				0AD0E5AD26106D9700162BA3 /* ListTVC.swift */,
-				0AD0E5B026106DFD00162BA3 /* DetailVC.swift */,
 				0AD0E5A5260FD19E00162BA3 /* EntertaimentTableViewCell.swift */,
 				0AD0E59E260D1C3F00162BA3 /* EventsViewController.swift */,
 				0AD0E595260D1B8500162BA3 /* SearchViewController.swift */,
@@ -237,13 +231,11 @@
 				0439A6FA2607A98D001E8955 /* ViewController.swift in Sources */,
 				0AD0E596260D1B8500162BA3 /* SearchViewController.swift in Sources */,
 				0439A6F62607A98D001E8955 /* AppDelegate.swift in Sources */,
-				0AD0E5B126106DFD00162BA3 /* DetailVC.swift in Sources */,
 				0AD0E59C260D1C2A00162BA3 /* PosterViewController.swift in Sources */,
 				0439A6F82607A98D001E8955 /* SceneDelegate.swift in Sources */,
 				0AD0E599260D1BFD00162BA3 /* ProfileViewController.swift in Sources */,
 				0439A7152607B222001E8955 /* Entertainment.swift in Sources */,
 				0AD0E593260D155900162BA3 /* MapViewController.swift in Sources */,
-				0AD0E5AE26106D9700162BA3 /* ListTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

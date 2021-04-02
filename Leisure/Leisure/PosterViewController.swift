@@ -47,6 +47,7 @@ class PosterViewController: UIViewController {
         title = "Афиша"
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
         tableView.register(EntertaimentTableViewCell.self, forCellReuseIdentifier: "EntertaimentTableViewCell")
         
         view.addSubview(tableView)
@@ -56,112 +57,39 @@ class PosterViewController: UIViewController {
         super.viewDidLayoutSubviews()
         tableView.pin.all()
     }
-    
-
-    
 }
 
 extension PosterViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       // return entertainments.count
-        return 1
+        return entertainments.count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-            return self.entertainments.count
+            return 1
         }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-           return 30
-       }
-    
-    
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-          let headerView = UIView()
-          headerView.backgroundColor = UIColor.clear
-          return headerView
-      }
-    
-//    override func tableView(_ tableView: UITableView, heightForHeaderInSection section : Int) -> CGFloat {
-//            return 10
-//        }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "EntertaimentTableViewCell", for: indexPath) as? EntertaimentTableViewCell else {
             return .init()
             }
         
-        cell.layer.cornerRadius=20
-        
-        //cell.layer.pin.margin(12)
-//        cell.layer.borderWidth = 8.0
-//        cell.layer.borderColor = UIColor.white.cgColor
-        
-      //  cell.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        //cell.imageView?.frame = cell.frame.offsetBy(dx: 100, dy: 100)
-        cell.configure(with: entertainments[indexPath.section])
+        cell.layer.cornerRadius=10
+    
+        cell.configure(with: entertainments[indexPath.row])
    
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return 136
     }
     
-//    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-//          return 10.0
-//      }
-//
-//    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-//
-//        let view:UIView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: self.view.bounds.size.width, height: 10))
-//        view.backgroundColor = .clear
-//
-//        return view
-//    }
-    
-//    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-//
-//        return 44
-//    }
-    
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let view = UIView.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 44))
-//        view.backgroundColor = .white
-//        return view
-//    }
-//
-//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//       return 44
-//    }
-    
-//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//            return 20
-//        }
-
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       // tableView.deselectRow(at: indexPath, animated: false)
+    
         let cityViewController = MapViewController()
         cityViewController.title = title
         cityViewController.modalPresentationStyle = .fullScreen
-        
-//        let navigationController = UINavigationController()
-        navigationController?.pushViewController(cityViewController, animated: true)
-        //present(navigationController, animated: true, completion: nil)
-        //let entertaiment = entertainments[indexPath.row]
-       /* let viewController = UIViewController()
-        viewController.title = entertaiment.name
-        let navigationController = UINavigationController(rootViewController: viewController)
-        
-       // viewController.modalPresentationStyle = .fullScreen
-        navigationController.present(viewController, animated: true)*/
-        
-        
+                navigationController?.pushViewController(cityViewController, animated: true)
     }
-    
-    
 }
 

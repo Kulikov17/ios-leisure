@@ -1,10 +1,3 @@
-//
-//  EventsViewController.swift
-//  Leisure
-//
-//  Created by Дмитрий Куликов on 25.03.2021.
-//
-
 import UIKit
 
 class EventsViewController: UIViewController {

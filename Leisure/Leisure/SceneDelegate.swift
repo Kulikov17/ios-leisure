@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  TableViewTest
-//
-//  Created by LyubaxaPro on 21.03.2021.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {

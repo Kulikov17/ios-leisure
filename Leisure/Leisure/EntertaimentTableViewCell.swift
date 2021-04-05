@@ -1,10 +1,3 @@
-//
-//  EntertaimentTableViewCell.swift
-//  Leisure
-//
-//  Created by Дмитрий Куликов on 24.03.2021.
-//
-
 import UIKit
 
 class EntertaimentTableViewCell: UITableViewCell {

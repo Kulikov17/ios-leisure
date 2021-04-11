@@ -4,14 +4,13 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        NetworkManager.shared.currentEvent(for: "msk") {  (currentEvent) in
-            print(currentEvent)
-        }
-        
+    
         let tabBarVC = UITabBarController()
         
-        let posterViewController = UINavigationController(rootViewController: PosterViewController())
+        let container = PosterContainer.assemble()
+        let viewController = container.viewController
+        
+        let posterViewController = UINavigationController(rootViewController: viewController)
         let searchViewController = UINavigationController(rootViewController: SearchViewController())
         let eventsViewController = UINavigationController(rootViewController: EventsViewController())
         let mapViewController = UINavigationController(rootViewController: MapViewController())

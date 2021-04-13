@@ -28,12 +28,17 @@ extension PosterInteractor: PosterInteractorInput {
             
             do {
                 let responcePosters = try decoder.decode(Responce.self, from: data)
-                self.output?.didLoad(posters: responcePosters.results)
+                
+                DispatchQueue.main.async {
+                    self.output?.didLoad(posters: responcePosters.results)
+                }
+                print(responcePosters)
 
             } catch let error {
                 print(error.localizedDescription)
                 return
             }
+
             
         }.resume()
     }

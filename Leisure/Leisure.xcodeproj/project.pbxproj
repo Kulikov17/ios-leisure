@@ -46,12 +46,12 @@
 		0439A7142607B222001E8955 /* Entertainment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entertainment.swift; sourceTree = "<group>"; };
 		04F1DEBD2619F36800976BBA /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		04F1DEC02619F7AE00976BBA /* CurrentEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentEvent.swift; sourceTree = "<group>"; };
-		04F1DEF0262330D800976BBA /* PosterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PosterPresenter.swift; path = Poster/PosterPresenter.swift; sourceTree = "<group>"; };
-		04F1DEF1262330D800976BBA /* PosterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PosterRouter.swift; path = Poster/PosterRouter.swift; sourceTree = "<group>"; };
-		04F1DEF2262330D800976BBA /* PosterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PosterViewController.swift; path = Poster/PosterViewController.swift; sourceTree = "<group>"; };
-		04F1DEF3262330D800976BBA /* PosterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PosterProtocols.swift; path = Poster/PosterProtocols.swift; sourceTree = "<group>"; };
-		04F1DEF4262330D800976BBA /* PosterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PosterInteractor.swift; path = Poster/PosterInteractor.swift; sourceTree = "<group>"; };
-		04F1DEF5262330D800976BBA /* PosterContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PosterContainer.swift; path = Poster/PosterContainer.swift; sourceTree = "<group>"; };
+		04F1DEF0262330D800976BBA /* PosterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterPresenter.swift; sourceTree = "<group>"; };
+		04F1DEF1262330D800976BBA /* PosterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterRouter.swift; sourceTree = "<group>"; };
+		04F1DEF2262330D800976BBA /* PosterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterViewController.swift; sourceTree = "<group>"; };
+		04F1DEF3262330D800976BBA /* PosterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterProtocols.swift; sourceTree = "<group>"; };
+		04F1DEF4262330D800976BBA /* PosterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterInteractor.swift; sourceTree = "<group>"; };
+		04F1DEF5262330D800976BBA /* PosterContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterContainer.swift; sourceTree = "<group>"; };
 		04F1DEFD262330FA00976BBA /* PosterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterViewModel.swift; sourceTree = "<group>"; };
 		04F1DF002623397800976BBA /* PosterModelLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterModelLoader.swift; sourceTree = "<group>"; };
 		04F1DF0426233B1000976BBA /* PosterServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterServiceModel.swift; sourceTree = "<group>"; };
@@ -115,6 +115,14 @@
 				0439A7032607A990001E8955 /* Info.plist */,
 				04F1DEBD2619F36800976BBA /* NetworkManager.swift */,
 				04F1DEC02619F7AE00976BBA /* CurrentEvent.swift */,
+				04F1DF072626163000976BBA /* PosterModule */,
+			);
+			path = Leisure;
+			sourceTree = "<group>";
+		};
+		04F1DF072626163000976BBA /* PosterModule */ = {
+			isa = PBXGroup;
+			children = (
 				04F1DEF0262330D800976BBA /* PosterPresenter.swift */,
 				04F1DEF1262330D800976BBA /* PosterRouter.swift */,
 				04F1DEF2262330D800976BBA /* PosterViewController.swift */,
@@ -125,7 +133,7 @@
 				04F1DEFD262330FA00976BBA /* PosterViewModel.swift */,
 				04F1DF002623397800976BBA /* PosterModelLoader.swift */,
 			);
-			path = Leisure;
+			path = PosterModule;
 			sourceTree = "<group>";
 		};
 		504360D049512C8FDC394249 /* Pods */ = {

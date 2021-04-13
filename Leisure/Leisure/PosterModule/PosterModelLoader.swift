@@ -12,7 +12,7 @@ struct PosterServiceLoader{
             _ = locations.popLast()
         }
         
-        let urlString = "https://kudago.com/public-api/v1.3/events/?location=\(locations)&fields=id,title,description,price"
+        let urlString = "https://kudago.com/public-api/v1.3/events/?location=\(locations)&fields=id,title,description,price,place&expand=place"
         return urlString;
     }
     

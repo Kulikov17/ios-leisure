@@ -45,6 +45,7 @@ extension PosterPresenter: PosterInteractorOutput {
                                    price: Int(poster.price) ?? 0)
            }
            
-           self.postersViewModels = postersViewModels
+        self.postersViewModels = postersViewModels
+        view?.reloadData()
     }
 }

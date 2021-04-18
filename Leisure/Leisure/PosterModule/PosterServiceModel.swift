@@ -1,6 +1,6 @@
 import Foundation
 
-struct Results: Codable {
+struct PosterResults: Codable {
     struct Place: Codable {
         let address: String?
     }
@@ -11,6 +11,6 @@ struct Results: Codable {
     let place: Place?
 }
 
-struct Responce: Codable {
-    let results: [Results]
+struct PosterResponce: Codable {
+    let results: [PosterResults]
 }

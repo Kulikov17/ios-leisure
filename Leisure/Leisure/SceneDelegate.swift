@@ -9,23 +9,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-       let window = UIWindow(windowScene: windowScene)
-   //     if let windowScene = scene as? UIWindowScene {
-//            let window = UIWindow(windowScene: windowScene)
-//            let container = CollectionContainer.assemble(with: CollectionContext())
-//            window.rootViewController = container.viewController
-//            self.window = window
-//            window.makeKeyAndVisible()
-//        }
+        let window = UIWindow(windowScene: windowScene)
         
-        let tabBarVC = UITabBarController()
-        tabBarVC.modalPresentationStyle = .fullScreen
-        let navigationController = UINavigationController(rootViewController: tabBarVC)
+        let tabBarViewController = UITabBarController()
+        
+        
+        let navigationController = UINavigationController(rootViewController: tabBarViewController)
         navigationController.setNavigationBarHidden(true, animated: true)
-        let container = PosterContainer.assemble()
-        let viewController = container.viewController
         
-        let posterViewController = UINavigationController(rootViewController: viewController)
+        let posterContainer = PosterContainer.assemble()
+        let posterViewControllerFromContainer = posterContainer.viewController
+        
+        let posterViewController = UINavigationController(rootViewController: posterViewControllerFromContainer)
+        
         let searchViewController = UINavigationController(rootViewController: SearchViewController())
         let eventsViewController = UINavigationController(rootViewController: EventsViewController())
         let mapViewController = UINavigationController(rootViewController: MapViewController())
@@ -37,9 +33,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         mapViewController.title = "Карта"
         profileViewController.title = "Профиль"
         
-        tabBarVC.setViewControllers([posterViewController, searchViewController, eventsViewController, mapViewController, profileViewController], animated: false)
+        tabBarViewController.setViewControllers([posterViewController, searchViewController, eventsViewController, mapViewController, profileViewController], animated: false)
         
-        guard let items = tabBarVC.tabBar.items else {
+        guard let items = tabBarViewController.tabBar.items else {
             return
         }
         

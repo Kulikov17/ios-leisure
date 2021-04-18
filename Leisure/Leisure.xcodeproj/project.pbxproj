@@ -27,9 +27,9 @@
 		0AD0E593260D155900162BA3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD0E592260D155900162BA3 /* MapViewController.swift */; };
 		0AD0E596260D1B8500162BA3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD0E595260D1B8500162BA3 /* SearchViewController.swift */; };
 		0AD0E599260D1BFD00162BA3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD0E598260D1BFD00162BA3 /* ProfileViewController.swift */; };
-		0AD0E59C260D1C2A00162BA3 /* PosterViewController_old.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD0E59B260D1C2A00162BA3 /* PosterViewController_old.swift */; };
 		0AD0E59F260D1C3F00162BA3 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD0E59E260D1C3F00162BA3 /* EventsViewController.swift */; };
 		0AD0E5A6260FD19E00162BA3 /* EntertaimentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD0E5A5260FD19E00162BA3 /* EntertaimentTableViewCell.swift */; };
+		0AD0E5CF262C21D000162BA3 /* PosterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD0E5CE262C21D000162BA3 /* PosterManager.swift */; };
 		7868F4C5BB4ED2DF6F52D5FB /* Pods_Leisure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F131F74AD215710F0D0DC869 /* Pods_Leisure.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,9 +56,9 @@
 		0AD0E592260D155900162BA3 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		0AD0E595260D1B8500162BA3 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		0AD0E598260D1BFD00162BA3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		0AD0E59B260D1C2A00162BA3 /* PosterViewController_old.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterViewController_old.swift; sourceTree = "<group>"; };
 		0AD0E59E260D1C3F00162BA3 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		0AD0E5A5260FD19E00162BA3 /* EntertaimentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntertaimentTableViewCell.swift; sourceTree = "<group>"; };
+		0AD0E5CE262C21D000162BA3 /* PosterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterManager.swift; sourceTree = "<group>"; };
 		74D4E4416603CAFD95483DF9 /* Pods-Leisure.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Leisure.release.xcconfig"; path = "Target Support Files/Pods-Leisure/Pods-Leisure.release.xcconfig"; sourceTree = "<group>"; };
 		8A7A7E6E01C3716AE3B96AC4 /* Pods-Leisure.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Leisure.debug.xcconfig"; path = "Target Support Files/Pods-Leisure/Pods-Leisure.debug.xcconfig"; sourceTree = "<group>"; };
 		F131F74AD215710F0D0DC869 /* Pods_Leisure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Leisure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,7 +100,6 @@
 				0439A6F52607A98D001E8955 /* AppDelegate.swift */,
 				0439A6F72607A98D001E8955 /* SceneDelegate.swift */,
 				0AD0E598260D1BFD00162BA3 /* ProfileViewController.swift */,
-				0AD0E59B260D1C2A00162BA3 /* PosterViewController_old.swift */,
 				0AD0E5A5260FD19E00162BA3 /* EntertaimentTableViewCell.swift */,
 				0AD0E59E260D1C3F00162BA3 /* EventsViewController.swift */,
 				0AD0E595260D1B8500162BA3 /* SearchViewController.swift */,
@@ -126,6 +125,7 @@
 				04F1DEF3262330D800976BBA /* PosterProtocols.swift */,
 				04F1DF0426233B1000976BBA /* PosterServiceModel.swift */,
 				04F1DEF4262330D800976BBA /* PosterInteractor.swift */,
+				0AD0E5CE262C21D000162BA3 /* PosterManager.swift */,
 				04F1DEF5262330D800976BBA /* PosterContainer.swift */,
 				04F1DEFD262330FA00976BBA /* PosterViewModel.swift */,
 				04F1DF002623397800976BBA /* PosterModelLoader.swift */,
@@ -277,12 +277,12 @@
 				04F1DEF8262330D800976BBA /* PosterViewController.swift in Sources */,
 				04F1DEBE2619F36800976BBA /* NetworkManager.swift in Sources */,
 				0439A6F62607A98D001E8955 /* AppDelegate.swift in Sources */,
-				0AD0E59C260D1C2A00162BA3 /* PosterViewController_old.swift in Sources */,
 				0439A6F82607A98D001E8955 /* SceneDelegate.swift in Sources */,
 				04F1DEF6262330D800976BBA /* PosterPresenter.swift in Sources */,
 				0AD0E599260D1BFD00162BA3 /* ProfileViewController.swift in Sources */,
 				04F1DEF7262330D800976BBA /* PosterRouter.swift in Sources */,
 				0439A7152607B222001E8955 /* Entertainment.swift in Sources */,
+				0AD0E5CF262C21D000162BA3 /* PosterManager.swift in Sources */,
 				0AD0E593260D155900162BA3 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

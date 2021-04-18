@@ -1,12 +1,5 @@
 import Foundation
 
-protocol PosterModuleInput {
-	var moduleOutput: PosterModuleOutput? { get }
-}
-
-protocol PosterModuleOutput: AnyObject {
-}
-
 protocol PosterViewInput: AnyObject {
     func reloadData()
 }
@@ -14,8 +7,10 @@ protocol PosterViewInput: AnyObject {
 protocol PosterViewOutput: AnyObject {
     
     var posterViewModels: [PosterViewModel] { get }
+    
     func didLoadView()
-    func didTapCell()
+    func didPullRefresh()
+    func didTapCell(at index: Int)
 }
 
 protocol PosterInteractorInput: AnyObject {
@@ -23,8 +18,10 @@ protocol PosterInteractorInput: AnyObject {
 }
 
 protocol PosterInteractorOutput: AnyObject {
-    func didLoad(posters: [Results])
+    func didLoad(posters: [PosterResults])
+    func didReceive(error: Error)
 }
 
 protocol PosterRouterInput: AnyObject {
+    func showPoster(model: PosterViewModel)
 }

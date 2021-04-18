@@ -21,9 +21,16 @@ final class PosterViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
+        
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(didPullRefresh), for: .valueChanged)
+        tableView.refreshControl = refreshControl
+
+        
         tableView.register(EntertaimentTableViewCell.self, forCellReuseIdentifier: "EntertaimentTableViewCell")
 
         view.addSubview(tableView)
+        
         output.didLoadView()
     }
 
@@ -31,16 +38,17 @@ final class PosterViewController: UIViewController {
         super.viewDidLayoutSubviews()
         tableView.pin.all()
     }
+    
+    @objc
+    private func didPullRefresh() {
+        output.didPullRefresh()
+    }
 }
 
 extension PosterViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return output.posterViewModels.count
     }
-
-    func numberOfSections(in tableView: UITableView) -> Int {
-            return 1
-        }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "EntertaimentTableViewCell", for: indexPath) as? EntertaimentTableViewCell else {
@@ -59,11 +67,7 @@ extension PosterViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-        let cityViewController = MapViewController()
-        cityViewController.title = title
-        cityViewController.modalPresentationStyle = .fullScreen
-                navigationController?.pushViewController(cityViewController, animated: true)
+        output.didTapCell(at: indexPath.row)
     }
 }
 
@@ -71,6 +75,7 @@ extension PosterViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension PosterViewController: PosterViewInput {
     func reloadData() {
+        self.tableView.refreshControl?.endRefreshing()
         self.tableView.reloadData()
     }
 }

@@ -2,45 +2,21 @@ import Foundation
 
 final class PosterInteractor {
 	weak var output: PosterInteractorOutput?
+    
+    private let postersManager: PostersManagerDescription = PostersManager.shared
 }
 
 extension PosterInteractor: PosterInteractorInput {
     func load(posters: [PosterServiceInfo]) {
-        let loader = PosterServiceLoader(posters: posters)
-        let urlString = loader.posterUrl()
-        
-        guard let url = URL(string: urlString) else {
-            return
-        }
-        
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            }
-            
-            guard let data = data, !data.isEmpty else {
-                //print("No data")
-                return
-            }
-            
-            let decoder = JSONDecoder()
-            
-            do {
-                let responcePosters = try decoder.decode(Responce.self, from: data)
-                
-                DispatchQueue.main.async {
-                    self.output?.didLoad(posters: responcePosters.results)
+        postersManager.load(posters: posters) { [weak self] (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let posters):
+                    self?.output?.didLoad(posters: posters)
+                case .failure(let error):
+                    self?.output?.didReceive(error: error)
                 }
-                print(responcePosters)
-
-            } catch let error {
-                print(error.localizedDescription)
-                return
             }
-
-            
-        }.resume()
+        }
     }
-    
 }

@@ -6,21 +6,49 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let window = UIWindow(windowScene: windowScene)
-//        if let windowScene = scene as? UIWindowScene {
+       let window = UIWindow(windowScene: windowScene)
+   //     if let windowScene = scene as? UIWindowScene {
 //            let window = UIWindow(windowScene: windowScene)
 //            let container = CollectionContainer.assemble(with: CollectionContext())
 //            window.rootViewController = container.viewController
 //            self.window = window
 //            window.makeKeyAndVisible()
 //        }
-        let viewController = ViewController()
-        let navigationController = UINavigationController(rootViewController: viewController)
+        
+        let tabBarVC = UITabBarController()
+        tabBarVC.modalPresentationStyle = .fullScreen
+        let navigationController = UINavigationController(rootViewController: tabBarVC)
+        navigationController.setNavigationBarHidden(true, animated: true)
+        let container = PosterContainer.assemble()
+        let viewController = container.viewController
+        
+        let posterViewController = UINavigationController(rootViewController: viewController)
+        let searchViewController = UINavigationController(rootViewController: SearchViewController())
+        let eventsViewController = UINavigationController(rootViewController: EventsViewController())
+        let mapViewController = UINavigationController(rootViewController: MapViewController())
+        let profileViewController = UINavigationController(rootViewController: ProfileViewController())
+    
+        posterViewController.title = "Афиша"
+        searchViewController.title = "Поиск"
+        eventsViewController.title = "События"
+        mapViewController.title = "Карта"
+        profileViewController.title = "Профиль"
+        
+        tabBarVC.setViewControllers([posterViewController, searchViewController, eventsViewController, mapViewController, profileViewController], animated: false)
+        
+        guard let items = tabBarVC.tabBar.items else {
+            return
+        }
+        
+        let images = ["star", "magnifyingglass", "calendar", "map", "person.crop.circle"]
+        for i in 0..<items.count {
+            items[i].image = UIImage(systemName: images[i])
+        }
+        //tabBarVC.modalPresentationStyle = .fullScreen
+       // present(tabBarVC, animated: true)
         
         window.rootViewController = navigationController
         

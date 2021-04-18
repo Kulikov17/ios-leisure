@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0439A6F62607A98D001E8955 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0439A6F52607A98D001E8955 /* AppDelegate.swift */; };
 		0439A6F82607A98D001E8955 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0439A6F72607A98D001E8955 /* SceneDelegate.swift */; };
-		0439A6FA2607A98D001E8955 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0439A6F92607A98D001E8955 /* ViewController.swift */; };
 		0439A6FD2607A98D001E8955 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0439A6FB2607A98D001E8955 /* Main.storyboard */; };
 		0439A6FF2607A990001E8955 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0439A6FE2607A990001E8955 /* Assets.xcassets */; };
 		0439A7022607A990001E8955 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0439A7002607A990001E8955 /* LaunchScreen.storyboard */; };
@@ -38,7 +37,6 @@
 		0439A6F22607A98D001E8955 /* Leisure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leisure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0439A6F52607A98D001E8955 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0439A6F72607A98D001E8955 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0439A6F92607A98D001E8955 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0439A6FC2607A98D001E8955 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0439A6FE2607A990001E8955 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0439A7012607A990001E8955 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -101,7 +99,6 @@
 			children = (
 				0439A6F52607A98D001E8955 /* AppDelegate.swift */,
 				0439A6F72607A98D001E8955 /* SceneDelegate.swift */,
-				0439A6F92607A98D001E8955 /* ViewController.swift */,
 				0AD0E598260D1BFD00162BA3 /* ProfileViewController.swift */,
 				0AD0E59B260D1C2A00162BA3 /* PosterViewController_old.swift */,
 				0AD0E5A5260FD19E00162BA3 /* EntertaimentTableViewCell.swift */,
@@ -274,7 +271,6 @@
 				04F1DF012623397800976BBA /* PosterModelLoader.swift in Sources */,
 				04F1DEC12619F7AE00976BBA /* CurrentEvent.swift in Sources */,
 				04F1DEFB262330D800976BBA /* PosterContainer.swift in Sources */,
-				0439A6FA2607A98D001E8955 /* ViewController.swift in Sources */,
 				04F1DEFA262330D800976BBA /* PosterInteractor.swift in Sources */,
 				0AD0E596260D1B8500162BA3 /* SearchViewController.swift in Sources */,
 				04F1DEFE262330FA00976BBA /* PosterViewModel.swift in Sources */,

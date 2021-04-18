@@ -12,9 +12,6 @@
 		0439A6FD2607A98D001E8955 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0439A6FB2607A98D001E8955 /* Main.storyboard */; };
 		0439A6FF2607A990001E8955 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0439A6FE2607A990001E8955 /* Assets.xcassets */; };
 		0439A7022607A990001E8955 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0439A7002607A990001E8955 /* LaunchScreen.storyboard */; };
-		0439A7152607B222001E8955 /* Entertainment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0439A7142607B222001E8955 /* Entertainment.swift */; };
-		04F1DEBE2619F36800976BBA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1DEBD2619F36800976BBA /* NetworkManager.swift */; };
-		04F1DEC12619F7AE00976BBA /* CurrentEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1DEC02619F7AE00976BBA /* CurrentEvent.swift */; };
 		04F1DEF6262330D800976BBA /* PosterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1DEF0262330D800976BBA /* PosterPresenter.swift */; };
 		04F1DEF7262330D800976BBA /* PosterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1DEF1262330D800976BBA /* PosterRouter.swift */; };
 		04F1DEF8262330D800976BBA /* PosterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1DEF2262330D800976BBA /* PosterViewController.swift */; };
@@ -41,9 +38,6 @@
 		0439A6FE2607A990001E8955 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0439A7012607A990001E8955 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0439A7032607A990001E8955 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0439A7142607B222001E8955 /* Entertainment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entertainment.swift; sourceTree = "<group>"; };
-		04F1DEBD2619F36800976BBA /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		04F1DEC02619F7AE00976BBA /* CurrentEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentEvent.swift; sourceTree = "<group>"; };
 		04F1DEF0262330D800976BBA /* PosterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterPresenter.swift; sourceTree = "<group>"; };
 		04F1DEF1262330D800976BBA /* PosterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterRouter.swift; sourceTree = "<group>"; };
 		04F1DEF2262330D800976BBA /* PosterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterViewController.swift; sourceTree = "<group>"; };
@@ -103,14 +97,11 @@
 				0AD0E5A5260FD19E00162BA3 /* EntertaimentTableViewCell.swift */,
 				0AD0E59E260D1C3F00162BA3 /* EventsViewController.swift */,
 				0AD0E595260D1B8500162BA3 /* SearchViewController.swift */,
-				0439A7142607B222001E8955 /* Entertainment.swift */,
 				0AD0E592260D155900162BA3 /* MapViewController.swift */,
 				0439A6FB2607A98D001E8955 /* Main.storyboard */,
 				0439A6FE2607A990001E8955 /* Assets.xcassets */,
 				0439A7002607A990001E8955 /* LaunchScreen.storyboard */,
 				0439A7032607A990001E8955 /* Info.plist */,
-				04F1DEBD2619F36800976BBA /* NetworkManager.swift */,
-				04F1DEC02619F7AE00976BBA /* CurrentEvent.swift */,
 				04F1DF072626163000976BBA /* PosterModule */,
 			);
 			path = Leisure;
@@ -269,19 +260,16 @@
 				04F1DEF9262330D800976BBA /* PosterProtocols.swift in Sources */,
 				04F1DF0526233B1000976BBA /* PosterServiceModel.swift in Sources */,
 				04F1DF012623397800976BBA /* PosterModelLoader.swift in Sources */,
-				04F1DEC12619F7AE00976BBA /* CurrentEvent.swift in Sources */,
 				04F1DEFB262330D800976BBA /* PosterContainer.swift in Sources */,
 				04F1DEFA262330D800976BBA /* PosterInteractor.swift in Sources */,
 				0AD0E596260D1B8500162BA3 /* SearchViewController.swift in Sources */,
 				04F1DEFE262330FA00976BBA /* PosterViewModel.swift in Sources */,
 				04F1DEF8262330D800976BBA /* PosterViewController.swift in Sources */,
-				04F1DEBE2619F36800976BBA /* NetworkManager.swift in Sources */,
 				0439A6F62607A98D001E8955 /* AppDelegate.swift in Sources */,
 				0439A6F82607A98D001E8955 /* SceneDelegate.swift in Sources */,
 				04F1DEF6262330D800976BBA /* PosterPresenter.swift in Sources */,
 				0AD0E599260D1BFD00162BA3 /* ProfileViewController.swift in Sources */,
 				04F1DEF7262330D800976BBA /* PosterRouter.swift in Sources */,
-				0439A7152607B222001E8955 /* Entertainment.swift in Sources */,
 				0AD0E5CF262C21D000162BA3 /* PosterManager.swift in Sources */,
 				0AD0E593260D155900162BA3 /* MapViewController.swift in Sources */,
 			);

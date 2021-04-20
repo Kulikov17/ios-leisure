@@ -77,10 +77,10 @@ class EntertaimentTableViewCell: UITableViewCell {
     }
     
     func configure(with model: PosterViewModel) {
-        titleLabel.text = model.title
+        titleLabel.text = model.short_title
         iconImageView.image = UIImage(systemName: "pencil")
-        costLabel.text = model.price != 0 ? "\(model.price) ₽" : "Бесплатно"
-        typeLabel.text = model.description
+        costLabel.text = model.is_free ? "Бесплатно" : "\(String(describing: model.price)) ₽"
+        typeLabel.text = model.category
         
     }
     

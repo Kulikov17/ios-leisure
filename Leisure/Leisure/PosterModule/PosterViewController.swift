@@ -47,7 +47,7 @@ final class PosterViewController: UIViewController {
 
 extension PosterViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return output.posterViewModels.count
+        return output.postersViewModels.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -57,7 +57,7 @@ extension PosterViewController: UITableViewDataSource, UITableViewDelegate {
 
         cell.layer.cornerRadius=10
 
-        cell.configure(with: output.posterViewModels[indexPath.row])
+        cell.configure(with: output.postersViewModels[indexPath.row])
 
         return cell
     }

@@ -4,7 +4,7 @@ final class PosterContainer {
 	let viewController: UIViewController
     
     private init(viewController: UIViewController) {
-            self.viewController = viewController
+        self.viewController = viewController
     }
 
 	class func assemble() -> PosterContainer {
@@ -13,6 +13,7 @@ final class PosterContainer {
         let presenter = PosterPresenter(router: router, interactor: interactor)
 		let viewController = PosterViewController(output: presenter)
 
+        router.sourceViewController = viewController
 		presenter.view = viewController
 		interactor.output = presenter
 

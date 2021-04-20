@@ -19,10 +19,7 @@ final class PosterPresenter {
 
 
 extension PosterPresenter: PosterViewOutput {
-    var posterViewModels: [PosterViewModel] {
-        return self.postersViewModels
-    }
-
+    
     func didLoadView() {
         interactor.load(posters: locationServiceInfos)
     }
@@ -32,17 +29,15 @@ extension PosterPresenter: PosterViewOutput {
     }
     
     func didTapCell(at index: Int) {
-        print(index)
+        let model = postersViewModels[index]
+        router.showPoster(model: model)
     }
 }
 
 extension PosterPresenter: PosterInteractorOutput {
     func didLoad(posters: [PosterResults]) {
         let postersViewModels = posters.map { poster in
-            return PosterViewModel(id: poster.id,
-                                   title: poster.title,
-                                   description: poster.description,
-                                   price: Int(poster.price) ?? 0)
+            return PosterViewModel(short_title: poster.short_title, category: poster.categories[0], price: poster.price, is_free: poster.is_free)
            
         }
            

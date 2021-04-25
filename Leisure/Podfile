@@ -7,4 +7,5 @@ target 'Leisure' do
 
   # Pods for Leisure
 	pod 'PinLayout'
+  pod 'Kingfisher'
 end

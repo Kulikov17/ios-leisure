@@ -1,4 +1,5 @@
 import UIKit
+import Kingfisher
 
 class EntertaimentTableViewCell: UITableViewCell {
     private let typeLabel = UILabel()
@@ -6,6 +7,7 @@ class EntertaimentTableViewCell: UITableViewCell {
     private let iconImageView = UIImageView()
     private let costLabel = UILabel()
     private let containerView = UIView()
+    private let age_restriction = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -17,6 +19,12 @@ class EntertaimentTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        iconImageView.image = nil
+        iconImageView.kf.cancelDownloadTask()
+    }
+    
     private func setup() {
         
         titleLabel.font = .systemFont(ofSize: 17, weight: .medium)
@@ -24,12 +32,16 @@ class EntertaimentTableViewCell: UITableViewCell {
         typeLabel.font = .systemFont(ofSize: 15, weight: .thin)
         costLabel.textColor = .lightGray
         typeLabel.textColor = .red
+        iconImageView.contentMode = .scaleAspectFill
+        iconImageView.clipsToBounds = true
+        costLabel.numberOfLines = 0
      
         containerView.layer.cornerRadius = 10
         
         containerView.clipsToBounds = true
         
         containerView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
+        
         
         
         [titleLabel, iconImageView, costLabel, typeLabel].forEach {
@@ -65,7 +77,7 @@ class EntertaimentTableViewCell: UITableViewCell {
             .height(16)
             .bottom(8)
             .sizeToFit(.height)
-        
+
         typeLabel.pin
             .height(16)
             .bottom(12)
@@ -77,10 +89,11 @@ class EntertaimentTableViewCell: UITableViewCell {
     }
     
     func configure(with model: PosterViewModel) {
-        titleLabel.text = model.title
-        iconImageView.image = UIImage(systemName: "pencil")
-        costLabel.text = model.price != 0 ? "\(model.price) ₽" : "Бесплатно"
-        typeLabel.text = model.description
+        titleLabel.text = model.short_title
+        iconImageView.kf.setImage(with: URL(string: model.image ?? ""))
+        costLabel.text = model.is_free ? "Бесплатно" : "\(String(describing: model.price ?? ""))"
+        typeLabel.text = model.category
+        print(model.age_restriction)
         
     }
     

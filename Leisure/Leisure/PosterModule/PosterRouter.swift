@@ -14,7 +14,8 @@ extension PosterRouter: PosterRouterInput {
         
         //let navigationController = UINavigationController(rootViewController: viewPosterDetailController)
         
-        sourceViewController?navigationController.present(viewPosterDetailController, animated: true, completion: nil)
+        sourceViewController?.navigationController?.pushViewController(viewPosterDetailController, animated: true)
+        //sourceViewController?.navigationController?.pushViewController(viewPosterDetailController, animated: true,)
         //sourceNavigationController?.pushViewController(viewPosterDetailController, animated: true)
     }
     

@@ -37,7 +37,7 @@ extension PosterPresenter: PosterViewOutput {
 extension PosterPresenter: PosterInteractorOutput {
     func didLoad(posters: [PosterResults]) {
         let postersViewModels = posters.map { poster in
-            return PosterViewModel(short_title: poster.short_title, category: poster.categories[0], price: poster.price, is_free: poster.is_free)
+            return PosterViewModel(short_title: poster.short_title, category: poster.categories[0], price: poster.price, is_free: poster.is_free, image: poster.images[0].image ?? "", age_restriction: poster.age_restriction as Any)
            
         }
            

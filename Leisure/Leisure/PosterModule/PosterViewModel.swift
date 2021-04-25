@@ -5,7 +5,8 @@ struct PosterViewModel {
     let category: String
     let price: String?
     let is_free: Bool
-    //let age_restriction: Any
+    let image: String?
+    let age_restriction: Any
 }
 
 

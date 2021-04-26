@@ -6,17 +6,11 @@ final class PosterRouter {
 }
 
 extension PosterRouter: PosterRouterInput {
+    
     func showPoster(model: PosterViewModel) {
-        let viewPosterDetailController = UIViewController()
-        viewPosterDetailController.title = model.short_title
+        let viewPosterDetailController = DetailsViewController(poster: model)
         viewPosterDetailController.view.backgroundColor = .systemBackground
-        //viewPosterDetailController.modalPresentationStyle = .fullScreen
-        
-        //let navigationController = UINavigationController(rootViewController: viewPosterDetailController)
-        
         sourceViewController?.navigationController?.pushViewController(viewPosterDetailController, animated: true)
-        //sourceViewController?.navigationController?.pushViewController(viewPosterDetailController, animated: true,)
-        //sourceNavigationController?.pushViewController(viewPosterDetailController, animated: true)
     }
     
 }

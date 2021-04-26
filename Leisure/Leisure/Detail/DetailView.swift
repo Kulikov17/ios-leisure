@@ -4,7 +4,7 @@ import PinLayout
 
 class DetailView: UIView {
     private var poster: PosterViewModel?
-   // private let titleLabel = UILabel()
+    //private let titleLabel = UILabel()
     private let shortTitleLabel = UILabel()
     private let addressLabel = UILabel()
     private let descriptionLabel = UITextView()
@@ -12,8 +12,14 @@ class DetailView: UIView {
     private let priceLabel = UILabel()
     private let iconImageView = UIImageView()
     private let containerView = UIView()
-    //private let siteUrl = UILabel()
-    
+    let buttonUrl = UIButton(frame: CGRect(x: 100,
+                                        y: 100,
+                                        width: 200,
+                                        height: 60))
+    let buttonFavorites = UIButton(frame: CGRect(x: 100,
+                                        y: 100,
+                                        width: 60,
+                                        height: 60))
     init(poster: PosterViewModel) {
         self.poster = poster
         super.init(frame: UIScreen.main.bounds)
@@ -41,9 +47,23 @@ class DetailView: UIView {
         addressLabel.font = .systemFont(ofSize: 16, weight: .semibold)
         priceLabel.font = .systemFont(ofSize: 16, weight: .semibold)
         descriptionLabel.font = .systemFont(ofSize: 17, weight: .light)
+        buttonUrl.setTitle("Перейти на сайт", for: .normal)
+        buttonUrl.setTitleColor(.systemGray6,for: .normal)
+        buttonUrl.addTarget(self,action: #selector(buttonUrlAction),
+                         for: .touchUpInside)
+        
+        buttonUrl.backgroundColor = #colorLiteral(red: 0.4392156899, green:
+                                                    0.01176470611, blue: 0.1921568662, alpha: 0.8)
+      
+//        buttonFavorites.setImage(UIImage(named: "aibo.png"), for: .normal)
+//             // for Highlighted state
+//        buttonFavorites.setImage(UIImage(named: "bmth.png"), for: .highlighted)
+//
+//                // for Selected state
+//        buttonFavorites.setImage(UIImage(named: "bpb.png"), for: .reserved)
         
         
-        [shortTitleLabel, addressLabel, descriptionLabel, priceLabel, iconImageView].forEach {
+        [shortTitleLabel, addressLabel, descriptionLabel, priceLabel, iconImageView, buttonUrl].forEach {
             containerView.addSubview($0)
         }
         self.addSubview(containerView)
@@ -93,11 +113,19 @@ class DetailView: UIView {
             .left(10)
             .right(10)
             .sizeToFit(.width)
+        
+        buttonUrl.pin
+            .below(of: descriptionLabel)
+            .margin(10)
+            .left(10)
+            .right(10)
+            .sizeToFit(.width)
+
     
     }
     
     func configure() {
-        shortTitleLabel.text = poster?.short_title
+        shortTitleLabel.text = poster?.title
         addressLabel.text = poster?.address
         descriptionLabel.text = poster?.description
         priceLabel.text = poster?.price
@@ -105,5 +133,17 @@ class DetailView: UIView {
         //ageRestrictionLabel.text = poster?.age_restriction?.?
         
     }
+    
+    @objc
+    func buttonUrlAction() {  //переписать на WKWebView
+        guard let url = URL(string: poster?.site_url ?? "") else {
+            return
+        }
+        UIApplication.shared.open(url)
+    }
+    
+    @objc
+    func buttonFavoritesAction() {
+        print("Button Favorites pressed")
+    }
 }
-

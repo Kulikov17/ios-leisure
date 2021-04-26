@@ -1,4 +1,5 @@
 import UIKit
+import WebKit
 
 class DetailsViewController: UIViewController {
     private var poster: PosterViewModel?

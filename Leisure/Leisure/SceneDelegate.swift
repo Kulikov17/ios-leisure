@@ -24,7 +24,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let searchViewController = UINavigationController(rootViewController: SearchViewController())
         let eventsViewController = UINavigationController(rootViewController: EventsViewController())
-        let mapViewController = UINavigationController(rootViewController: MapViewController())
+        
+        let mapContainer = MapContainer.assemble()
+        let mapViewControllerFromContainer = mapContainer.viewController
+        
+        let mapViewController = UINavigationController(rootViewController: mapViewControllerFromContainer)
+        mapViewController.setNavigationBarHidden(true, animated: false)
+        
         let profileViewController = UINavigationController(rootViewController: ProfileViewController())
     
         posterViewController.title = "Афиша"

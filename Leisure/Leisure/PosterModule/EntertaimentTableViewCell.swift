@@ -34,7 +34,7 @@ class EntertaimentTableViewCell: UITableViewCell {
         typeLabel.textColor = .red
         iconImageView.contentMode = .scaleAspectFill
         iconImageView.clipsToBounds = true
-        costLabel.numberOfLines = 0
+        
      
         containerView.layer.cornerRadius = 10
         
@@ -73,10 +73,10 @@ class EntertaimentTableViewCell: UITableViewCell {
             .sizeToFit(.width)
 
         costLabel.pin
-            .right(12)
-            .height(16)
             .bottom(8)
-            .sizeToFit(.height)
+            .right(12)
+            .left(300)
+            .sizeToFit(.width)
 
         typeLabel.pin
             .height(16)
@@ -93,7 +93,6 @@ class EntertaimentTableViewCell: UITableViewCell {
         iconImageView.kf.setImage(with: URL(string: model.image ?? ""))
         costLabel.text = model.is_free ? "Бесплатно" : "\(String(describing: model.price ?? ""))"
         typeLabel.text = model.category
-        print(model.age_restriction)
         
     }
     

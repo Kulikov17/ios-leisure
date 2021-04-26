@@ -31,13 +31,14 @@ extension PosterPresenter: PosterViewOutput {
     func didTapCell(at index: Int) {
         let model = postersViewModels[index]
         router.showPoster(model: model)
+        
     }
 }
 
 extension PosterPresenter: PosterInteractorOutput {
     func didLoad(posters: [PosterResults]) {
         let postersViewModels = posters.map { poster in
-            return PosterViewModel(short_title: poster.short_title, category: poster.categories[0], price: poster.price, is_free: poster.is_free, image: poster.images[0].image ?? "", age_restriction: poster.age_restriction as Any)
+            return PosterViewModel(address: poster.place?.address, short_title: poster.short_title,  title: poster.title, description: poster.description, category: poster.categories[0], price: poster.price, is_free: poster.is_free, image: poster.images[0].image ?? "", age_restriction: poster.age_restriction as Any, site_url: poster.site_url ?? "" )
            
         }
            

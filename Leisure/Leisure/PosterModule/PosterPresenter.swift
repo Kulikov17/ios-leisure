@@ -15,6 +15,7 @@ final class PosterPresenter {
     ]
     
     private (set) var postersViewModels: [PosterViewModel] = []
+    var filteredPostersViewModels: [PosterViewModel] = []
 }
 
 

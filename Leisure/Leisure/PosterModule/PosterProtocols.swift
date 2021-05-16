@@ -7,6 +7,7 @@ protocol PosterViewInput: AnyObject {
 protocol PosterViewOutput: AnyObject {
     
     var postersViewModels: [PosterViewModel] { get }
+    var filteredPostersViewModels: [PosterViewModel] { get set }
     
     func didLoadView()
     func didPullRefresh()

@@ -4,6 +4,14 @@ import PinLayout
 final class PosterViewController: UIViewController {
 	private let output: PosterViewOutput
     private let tableView = UITableView()
+    private let searchController = UISearchController(searchResultsController: nil)
+    private var searchBarIsEmpty: Bool {
+        guard let text = searchController.searchBar.text else { return false}
+        return text.isEmpty
+    }
+    private var isFiltering: Bool {
+        return searchController.isActive && !searchBarIsEmpty
+    }
 
     init(output: PosterViewOutput) {
         self.output = output
@@ -30,7 +38,13 @@ final class PosterViewController: UIViewController {
         tableView.register(EntertaimentTableViewCell.self, forCellReuseIdentifier: "EntertaimentTableViewCell")
 
         view.addSubview(tableView)
-        
+        searchController.searchResultsUpdater = self
+        // взаимодействие с отфильтрованным
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Поиск"
+        navigationItem.searchController = searchController
+        //отпустить строку поиска при переходе на другой экран
+        definesPresentationContext = true
         output.didLoadView()
     }
 
@@ -47,6 +61,9 @@ final class PosterViewController: UIViewController {
 
 extension PosterViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isFiltering {
+            return output.filteredPostersViewModels.count
+        }
         return output.postersViewModels.count
     }
 
@@ -56,9 +73,12 @@ extension PosterViewController: UITableViewDataSource, UITableViewDelegate {
             }
 
         cell.layer.cornerRadius=10
-
-        cell.configure(with: output.postersViewModels[indexPath.row])
-
+        
+        if isFiltering {
+            cell.configure(with: output.filteredPostersViewModels[indexPath.row])
+        } else {
+            cell.configure(with: output.postersViewModels[indexPath.row])
+        }
         return cell
     }
 
@@ -77,5 +97,19 @@ extension PosterViewController: PosterViewInput {
     func reloadData() {
         self.tableView.refreshControl?.endRefreshing()
         self.tableView.reloadData()
+    }
+}
+
+
+extension PosterViewController: UISearchResultsUpdating{
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearch(searchController.searchBar.text ?? "")
+    }
+    
+    private func filterContentForSearch(_ searchText: String) {
+        output.filteredPostersViewModels = output.postersViewModels.filter({ (poster: PosterViewModel) -> Bool in
+            poster.short_title.lowercased().contains(searchText.lowercased())
+        })
+        tableView.reloadData()
     }
 }

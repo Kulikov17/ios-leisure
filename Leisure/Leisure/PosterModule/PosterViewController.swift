@@ -79,7 +79,6 @@ extension PosterViewController: UITableViewDataSource, UITableViewDelegate {
         if isFiltering {
             return output.filteredPostersViewModels.count
         }
-        print(output.postersViewModels.count)
         return output.postersViewModels.count
     }
 

@@ -18,7 +18,7 @@ struct PosterServiceLoader{
                     _ = urlString.popLast()
                 }
         
-        urlString += "&page_size=500&actual_since=\(NSDate().timeIntervalSince1970)&fields=title,short_title,place,description,categories,age_restriction,price,is_free,images,site_url&expand=place"
+        urlString += "&page_size=50&actual_since=\(NSDate().timeIntervalSince1970)&fields=title,short_title,place,description,categories,age_restriction,price,is_free,images,site_url&expand=place"
         
         return urlString;
     }

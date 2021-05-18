@@ -5,7 +5,7 @@ struct PosterViewModel {
     let short_title: String
     let title: String
     let description: String
-    let category: String
+    let category: [String]
     let price: String?
     let is_free: Bool
     let image: String?

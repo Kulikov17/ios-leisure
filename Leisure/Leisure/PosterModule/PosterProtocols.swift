@@ -11,7 +11,7 @@ protocol PosterViewOutput: AnyObject {
     
     func didLoadView()
     func didPullRefresh()
-    func didTapCell(at index: Int)
+    func didTapCell(poster: PosterViewModel)
     func didTapFilter()
     func setCategories(categories: [String])
 }

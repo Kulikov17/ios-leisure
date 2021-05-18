@@ -79,6 +79,7 @@ extension PosterViewController: UITableViewDataSource, UITableViewDelegate {
         if isFiltering {
             return output.filteredPostersViewModels.count
         }
+        print(output.postersViewModels.count)
         return output.postersViewModels.count
     }
 
@@ -102,10 +103,13 @@ extension PosterViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        output.didTapCell(at: indexPath.row)
+        if isFiltering{
+            output.didTapCell(poster: output.filteredPostersViewModels[indexPath.row])
+        } else {
+            output.didTapCell(poster: output.postersViewModels[indexPath.row])
+        }
     }
 }
-
 
 
 extension PosterViewController: PosterViewInput {
@@ -123,7 +127,7 @@ extension PosterViewController: UISearchResultsUpdating{
     
     private func filterContentForSearch(_ searchText: String) {
         output.filteredPostersViewModels = output.postersViewModels.filter({ (poster: PosterViewModel) -> Bool in
-            poster.short_title.lowercased().contains(searchText.lowercased())
+            (poster.short_title.lowercased().contains(searchText.lowercased()) || poster.title.lowercased().contains(searchText.lowercased()))
         })
         tableView.reloadData()
     }

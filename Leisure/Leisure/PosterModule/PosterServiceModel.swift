@@ -11,7 +11,7 @@ struct PosterResults: Codable {
     let short_title: String
     let place: Place?
     let description: String
-    let categories: [String]
+    var categories: [String]
     let age_restriction: String?
     let price: String?
     let is_free: Bool
@@ -24,13 +24,17 @@ struct PosterResults: Codable {
         short_title = try container.decode(String.self, forKey: .short_title)
         place = try container.decode(Place?.self, forKey: .place)
         description = try container.decode(String.self, forKey: .description)
-        categories = try container.decode([String].self, forKey: .categories)
+        let categories_dict = ["business-events": "События для бизнеса", "cinema": " Кино", "concert": "Концерты", "education": "Обучение",
+                               "entertainment": "Развлечения", "exhibition": "Выставки", "fashion": "Мода и стиль", "festival": "Фестивали",
+                               "holiday": "Праздники", "kids": "Детям", "other": "Разное", "party": "Вечеринки", "photo": "Фотография", "quest": "Квесты",
+                               "recreation": "Отдых", "shopping": "Шопинг", "social-activity": "Благотворительность", "theater": "Спектакли",
+                               "tour": "Экскурсии", "yarmarki-razvlecheniya-yarmarki": "Ярмарки" ]
         
-      //  let categories_dict = []
-        
-//        for categorie in categories{
-//            
-//        }
+        let raw_categories = try container.decode([String].self, forKey: .categories)
+        categories = []
+        for categ in raw_categories{
+            categories.append(categories_dict[categ] ?? "Разное")
+        }
         
         do {
             age_restriction = try String(container.decode(Int.self, forKey: .age_restriction))

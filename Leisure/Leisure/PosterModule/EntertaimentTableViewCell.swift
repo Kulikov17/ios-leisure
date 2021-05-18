@@ -9,6 +9,8 @@ class EntertaimentTableViewCell: UITableViewCell {
     private let containerView = UIView()
     private let age_restriction = UILabel()
     
+    
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -73,26 +75,36 @@ class EntertaimentTableViewCell: UITableViewCell {
             .sizeToFit(.width)
 
         costLabel.pin
-            .bottom(8)
+            .bottom(25)
             .right(12)
             .left(300)
             .sizeToFit(.width)
-
+        
         typeLabel.pin
-            .height(16)
-            .bottom(12)
+            .bottom(8)
             .after(of: iconImageView)
             .marginLeft(8)
-            .sizeToFit(.height)
-            
-            
+            .right(12)
+            .sizeToFit(.width)
+        
     }
     
     func configure(with model: PosterViewModel) {
         titleLabel.text = model.short_title
+        if titleLabel.text == "" {
+            titleLabel.text = model.title
+        }
         iconImageView.kf.setImage(with: URL(string: model.image ?? ""))
-        costLabel.text = model.is_free ? "Бесплатно" : "\(String(describing: model.price ?? ""))"
-        typeLabel.text = model.category
+        
+        var price: String = String(describing: model.price ?? "Цена не указана")
+        if model.price == "" {
+            price = "Цена не указана"
+        }
+        costLabel.text = model.is_free ? "Бесплатно" : "\(price)"
+        typeLabel.text = ""
+        for category in model.category{
+            typeLabel.text! += category + "  "
+        }
         
     }
     

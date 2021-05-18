@@ -4,15 +4,21 @@ final class PosterPresenter {
 	weak var view: PosterViewInput?
 	private let router: PosterRouterInput
 	private let interactor: PosterInteractorInput
+    private var categories: [String] = []
+    private var locationServiceInfos: PosterServiceInfo = PosterServiceInfo(location:"msk", category: [])
+    
+
 
     init(router: PosterRouterInput, interactor: PosterInteractorInput) {
         self.router = router
         self.interactor = interactor
+       
     }
-    
-    private var locationServiceInfos: [PosterServiceInfo] = [
-        PosterServiceInfo(location: "msk")
-    ]
+
+    func setLocationService(location: String, categories: [String]){
+        self.locationServiceInfos.location = location
+        self.locationServiceInfos.category = categories
+    }
     
     private (set) var postersViewModels: [PosterViewModel] = []
     var filteredPostersViewModels: [PosterViewModel] = []
@@ -22,6 +28,7 @@ final class PosterPresenter {
 extension PosterPresenter: PosterViewOutput {
     
     func didLoadView() {
+        setLocationService(location: "msk", categories: categories)
         interactor.load(posters: locationServiceInfos)
     }
     
@@ -33,6 +40,16 @@ extension PosterPresenter: PosterViewOutput {
         let model = postersViewModels[index]
         router.showPoster(model: model)
         
+    }
+    
+    func didTapFilter() {
+        router.openFilter()
+    }
+    
+    func setCategories(categories: [String]){
+        
+        self.categories = categories
+        setLocationService(location: "msk", categories: categories)
     }
 }
 

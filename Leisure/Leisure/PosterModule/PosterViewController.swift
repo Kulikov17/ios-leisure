@@ -2,7 +2,7 @@ import UIKit
 import PinLayout
 
 final class PosterViewController: UIViewController {
-	private let output: PosterViewOutput
+    private let output: PosterViewOutput
     private let tableView = UITableView()
     private let searchController = UISearchController(searchResultsController: nil)
     private var searchBarIsEmpty: Bool {
@@ -22,8 +22,8 @@ final class PosterViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-	override func viewDidLoad() {
-		super.viewDidLoad()
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
         title = "Афиша"
         tableView.delegate = self
@@ -39,12 +39,22 @@ final class PosterViewController: UIViewController {
 
         view.addSubview(tableView)
         searchController.searchResultsUpdater = self
-        // взаимодействие с отфильтрованным
+        // взаимодействие с отфильтрованным
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Поиск"
         navigationItem.searchController = searchController
         //отпустить строку поиска при переходе на другой экран
         definesPresentationContext = true
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
+//                                                            target: self,
+//                                                            action: #selector(didTapFilter))
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage.init(systemName: "slider.horizontal.3"),
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(didTapFilter))
+
+        
         output.didLoadView()
     }
 
@@ -56,6 +66,11 @@ final class PosterViewController: UIViewController {
     @objc
     private func didPullRefresh() {
         output.didPullRefresh()
+    }
+    
+    @objc
+    private func didTapFilter() {
+        output.didTapFilter()
     }
 }
 

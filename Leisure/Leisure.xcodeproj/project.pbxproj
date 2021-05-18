@@ -12,6 +12,8 @@
 		0439A6FD2607A98D001E8955 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0439A6FB2607A98D001E8955 /* Main.storyboard */; };
 		0439A6FF2607A990001E8955 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0439A6FE2607A990001E8955 /* Assets.xcassets */; };
 		0439A7022607A990001E8955 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0439A7002607A990001E8955 /* LaunchScreen.storyboard */; };
+		0498F7B726515F1E0052BF89 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498F7B626515F1E0052BF89 /* FilterView.swift */; };
+		0498F7BA265161820052BF89 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498F7B9265161820052BF89 /* FilterViewController.swift */; };
 		04F1DEF6262330D800976BBA /* PosterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1DEF0262330D800976BBA /* PosterPresenter.swift */; };
 		04F1DEF7262330D800976BBA /* PosterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1DEF1262330D800976BBA /* PosterRouter.swift */; };
 		04F1DEF8262330D800976BBA /* PosterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1DEF2262330D800976BBA /* PosterViewController.swift */; };
@@ -21,10 +23,8 @@
 		04F1DEFE262330FA00976BBA /* PosterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1DEFD262330FA00976BBA /* PosterViewModel.swift */; };
 		04F1DF012623397800976BBA /* PosterModelLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1DF002623397800976BBA /* PosterModelLoader.swift */; };
 		04F1DF0526233B1000976BBA /* PosterServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1DF0426233B1000976BBA /* PosterServiceModel.swift */; };
-
 		04F1DF4F26360BD800976BBA /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1DF4E26360BD800976BBA /* DetailsViewController.swift */; };
 		04F1DF5226360BFF00976BBA /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1DF5126360BFF00976BBA /* DetailView.swift */; };
-
 		0AD0E596260D1B8500162BA3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD0E595260D1B8500162BA3 /* SearchViewController.swift */; };
 		0AD0E599260D1BFD00162BA3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD0E598260D1BFD00162BA3 /* ProfileViewController.swift */; };
 		0AD0E59F260D1C3F00162BA3 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD0E59E260D1C3F00162BA3 /* EventsViewController.swift */; };
@@ -51,6 +51,8 @@
 		0439A6FE2607A990001E8955 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0439A7012607A990001E8955 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0439A7032607A990001E8955 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0498F7B626515F1E0052BF89 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		0498F7B9265161820052BF89 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		04F1DEF0262330D800976BBA /* PosterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterPresenter.swift; sourceTree = "<group>"; };
 		04F1DEF1262330D800976BBA /* PosterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterRouter.swift; sourceTree = "<group>"; };
 		04F1DEF2262330D800976BBA /* PosterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterViewController.swift; sourceTree = "<group>"; };
@@ -60,10 +62,8 @@
 		04F1DEFD262330FA00976BBA /* PosterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterViewModel.swift; sourceTree = "<group>"; };
 		04F1DF002623397800976BBA /* PosterModelLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterModelLoader.swift; sourceTree = "<group>"; };
 		04F1DF0426233B1000976BBA /* PosterServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterServiceModel.swift; sourceTree = "<group>"; };
-
 		04F1DF4E26360BD800976BBA /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		04F1DF5126360BFF00976BBA /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-
 		0AD0E595260D1B8500162BA3 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		0AD0E598260D1BFD00162BA3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0AD0E59E260D1C3F00162BA3 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +156,8 @@
 				04F1DEF5262330D800976BBA /* PosterContainer.swift */,
 				04F1DEFD262330FA00976BBA /* PosterViewModel.swift */,
 				04F1DF002623397800976BBA /* PosterModelLoader.swift */,
+				0498F7B626515F1E0052BF89 /* FilterView.swift */,
+				0498F7B9265161820052BF89 /* FilterViewController.swift */,
 			);
 			path = PosterModule;
 			sourceTree = "<group>";
@@ -316,6 +318,7 @@
 				0AD0E596260D1B8500162BA3 /* SearchViewController.swift in Sources */,
 				04F1DEFE262330FA00976BBA /* PosterViewModel.swift in Sources */,
 				04F1DEF8262330D800976BBA /* PosterViewController.swift in Sources */,
+				0498F7B726515F1E0052BF89 /* FilterView.swift in Sources */,
 				0AD0E5F826357D7800162BA3 /* MapInteractor.swift in Sources */,
 				0AD0E5F726357D7800162BA3 /* MapProtocols.swift in Sources */,
 				0439A6F62607A98D001E8955 /* AppDelegate.swift in Sources */,
@@ -323,6 +326,7 @@
 				0439A6F82607A98D001E8955 /* SceneDelegate.swift in Sources */,
 				04F1DEF6262330D800976BBA /* PosterPresenter.swift in Sources */,
 				0AD0E599260D1BFD00162BA3 /* ProfileViewController.swift in Sources */,
+				0498F7BA265161820052BF89 /* FilterViewController.swift in Sources */,
 				0AD0E60226359BEB00162BA3 /* MapManager.swift in Sources */,
 				04F1DEF7262330D800976BBA /* PosterRouter.swift in Sources */,
 				04F1DF5226360BFF00976BBA /* DetailView.swift in Sources */,
@@ -534,4 +538,3 @@
 	};
 	rootObject = 0439A6EA2607A98D001E8955 /* Project object */;
 }
-

@@ -26,6 +26,12 @@ struct PosterResults: Codable {
         description = try container.decode(String.self, forKey: .description)
         categories = try container.decode([String].self, forKey: .categories)
         
+      //  let categories_dict = []
+        
+//        for categorie in categories{
+//            
+//        }
+        
         do {
             age_restriction = try String(container.decode(Int.self, forKey: .age_restriction))
         } catch DecodingError.typeMismatch {

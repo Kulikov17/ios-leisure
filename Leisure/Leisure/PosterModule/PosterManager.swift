@@ -5,7 +5,7 @@ enum NetworkError: Error {
 }
 
 protocol PostersManagerDescription: AnyObject {
-    func load(posters: [PosterServiceInfo], completion: @escaping (Result<[PosterResults], Error>) -> Void)
+    func load(posters: PosterServiceInfo, completion: @escaping (Result<[PosterResults], Error>) -> Void)
 }
 
 final class PostersManager: PostersManagerDescription {
@@ -14,7 +14,7 @@ final class PostersManager: PostersManagerDescription {
     
     private init() {}
     
-    func load(posters: [PosterServiceInfo], completion: @escaping (Result<[PosterResults], Error>) -> Void) {
+    func load(posters: PosterServiceInfo, completion: @escaping (Result<[PosterResults], Error>) -> Void) {
         let loader = PosterServiceLoader(posters: posters)
         let urlString = loader.posterUrl()
                 

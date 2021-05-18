@@ -1,22 +1,28 @@
 import Foundation
 
 struct PosterServiceLoader{
-    private var posters: [PosterServiceInfo]
+    private var posters: PosterServiceInfo
     
     private var urlString: String {
-        var locations = posters.reduce("",  { res, current in
-            return res + current.location + ","
-        })
+        var locations = posters.location
         
-        if locations.last == "," {
-            _ = locations.popLast()
+        var urlString = "https://kudago.com/public-api/v1.3/events/?location=\(locations)"
+        
+        if posters.category.count != 0 {
+            urlString += "&categories="
+            for cat in posters.category{
+                urlString += cat + ","
+            }
         }
+        if urlString.last == "," {
+                    _ = urlString.popLast()
+                }
         
-        let urlString = "https://kudago.com/public-api/v1.3/events/?location=\(locations)&fields=title,short_title,place,description,categories,age_restriction,price,is_free,images,site_url&expand=place"
+        urlString += "&fields=title,short_title,place,description,categories,age_restriction,price,is_free,images,site_url&expand=place"
         return urlString;
     }
     
-    init(posters: [PosterServiceInfo]){
+    init(posters: PosterServiceInfo){
         self.posters = posters
     }
     
@@ -27,6 +33,6 @@ struct PosterServiceLoader{
     
 
 struct PosterServiceInfo {
-    let location: String
-  //  let category: String
+    var location: String
+    var category: [String]
 }

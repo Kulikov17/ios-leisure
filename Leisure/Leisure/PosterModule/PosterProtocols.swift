@@ -12,10 +12,12 @@ protocol PosterViewOutput: AnyObject {
     func didLoadView()
     func didPullRefresh()
     func didTapCell(at index: Int)
+    func didTapFilter()
+    func setCategories(categories: [String])
 }
 
 protocol PosterInteractorInput: AnyObject {
-    func load(posters: [PosterServiceInfo])
+    func load(posters: PosterServiceInfo)
 }
 
 protocol PosterInteractorOutput: AnyObject {
@@ -25,4 +27,5 @@ protocol PosterInteractorOutput: AnyObject {
 
 protocol PosterRouterInput: AnyObject {
     func showPoster(model: PosterViewModel)
+    func openFilter()
 }

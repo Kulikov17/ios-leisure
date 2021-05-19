@@ -7,5 +7,8 @@ target 'Leisure' do
 
   # Pods for Leisure
 	pod 'PinLayout'
-  pod 'Kingfisher'
+  	pod 'Kingfisher'
+	pod 'Firebase/Core'
+	pod 'Firebase/Auth'
+	pod 'Firebase/Database'
 end

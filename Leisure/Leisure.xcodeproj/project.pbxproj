@@ -26,8 +26,18 @@
 		04F1DF0526233B1000976BBA /* PosterServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1DF0426233B1000976BBA /* PosterServiceModel.swift */; };
 		04F1DF4F26360BD800976BBA /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1DF4E26360BD800976BBA /* DetailsViewController.swift */; };
 		04F1DF5226360BFF00976BBA /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1DF5126360BFF00976BBA /* DetailView.swift */; };
+		0AC7571C2651325100284EA6 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC757172651325100284EA6 /* ProfilePresenter.swift */; };
+		0AC7571D2651325100284EA6 /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC757182651325100284EA6 /* ProfileRouter.swift */; };
+		0AC7571E2651325100284EA6 /* ProfileProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC757192651325100284EA6 /* ProfileProtocols.swift */; };
+		0AC7571F2651325100284EA6 /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC7571A2651325100284EA6 /* ProfileInteractor.swift */; };
+		0AC757202651325100284EA6 /* ProfileContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC7571B2651325100284EA6 /* ProfileContainer.swift */; };
+		0AC757222651336200284EA6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC757212651336200284EA6 /* ProfileViewController.swift */; };
+		0AC757272651399E00284EA6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC75725265138A000284EA6 /* LoginView.swift */; };
+		0AC7572926515EBA00284EA6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0AC7572826515EBA00284EA6 /* GoogleService-Info.plist */; };
+		0AC7572B2651652F00284EA6 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC7572A2651652F00284EA6 /* RegistrationView.swift */; };
+		0AC75731265178A900284EA6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC75730265178A900284EA6 /* ProfileView.swift */; };
+		0AC7573326517E7D00284EA6 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC7573226517E7D00284EA6 /* RegistrationViewController.swift */; };
 		0AD0E596260D1B8500162BA3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD0E595260D1B8500162BA3 /* SearchViewController.swift */; };
-		0AD0E599260D1BFD00162BA3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD0E598260D1BFD00162BA3 /* ProfileViewController.swift */; };
 		0AD0E59F260D1C3F00162BA3 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD0E59E260D1C3F00162BA3 /* EventsViewController.swift */; };
 		0AD0E5A6260FD19E00162BA3 /* EntertaimentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD0E5A5260FD19E00162BA3 /* EntertaimentTableViewCell.swift */; };
 		0AD0E5CF262C21D000162BA3 /* PosterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD0E5CE262C21D000162BA3 /* PosterManager.swift */; };
@@ -66,8 +76,18 @@
 		04F1DF0426233B1000976BBA /* PosterServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterServiceModel.swift; sourceTree = "<group>"; };
 		04F1DF4E26360BD800976BBA /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		04F1DF5126360BFF00976BBA /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		0AC757172651325100284EA6 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		0AC757182651325100284EA6 /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
+		0AC757192651325100284EA6 /* ProfileProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileProtocols.swift; sourceTree = "<group>"; };
+		0AC7571A2651325100284EA6 /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
+		0AC7571B2651325100284EA6 /* ProfileContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContainer.swift; sourceTree = "<group>"; };
+		0AC757212651336200284EA6 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		0AC75725265138A000284EA6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		0AC7572826515EBA00284EA6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0AC7572A2651652F00284EA6 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		0AC75730265178A900284EA6 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		0AC7573226517E7D00284EA6 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		0AD0E595260D1B8500162BA3 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		0AD0E598260D1BFD00162BA3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0AD0E59E260D1C3F00162BA3 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		0AD0E5A5260FD19E00162BA3 /* EntertaimentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntertaimentTableViewCell.swift; sourceTree = "<group>"; };
 		0AD0E5CE262C21D000162BA3 /* PosterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterManager.swift; sourceTree = "<group>"; };
@@ -119,11 +139,21 @@
 		0439A6F42607A98D001E8955 /* Leisure */ = {
 			isa = PBXGroup;
 			children = (
+				0AC7572826515EBA00284EA6 /* GoogleService-Info.plist */,
 				0439A6F52607A98D001E8955 /* AppDelegate.swift */,
 				0439A6F72607A98D001E8955 /* SceneDelegate.swift */,
+				0AC757172651325100284EA6 /* ProfilePresenter.swift */,
+				0AC75730265178A900284EA6 /* ProfileView.swift */,
+				0AC757182651325100284EA6 /* ProfileRouter.swift */,
+				0AC7573226517E7D00284EA6 /* RegistrationViewController.swift */,
+				0AC757192651325100284EA6 /* ProfileProtocols.swift */,
+				0AC7571A2651325100284EA6 /* ProfileInteractor.swift */,
+				0AC7571B2651325100284EA6 /* ProfileContainer.swift */,
+				0AC7572A2651652F00284EA6 /* RegistrationView.swift */,
 				0AD0E5EE26357D7800162BA3 /* MapPresenter.swift */,
 				0AD0E5EF26357D7800162BA3 /* MapRouter.swift */,
 				0AD0E5F026357D7800162BA3 /* MapViewController.swift */,
+				0AC757212651336200284EA6 /* ProfileViewController.swift */,
 				0AD0E5FB2635885700162BA3 /* MapPlace.swift */,
 				0AD0E5F126357D7800162BA3 /* MapProtocols.swift */,
 				0AD0E5FE26359A0000162BA3 /* MapServiceModel.swift */,
@@ -131,10 +161,10 @@
 				0AD0E60126359BEB00162BA3 /* MapManager.swift */,
 				0AD0E5F226357D7800162BA3 /* MapInteractor.swift */,
 				0AD0E5F326357D7800162BA3 /* MapContainer.swift */,
-				0AD0E598260D1BFD00162BA3 /* ProfileViewController.swift */,
 				0AD0E59E260D1C3F00162BA3 /* EventsViewController.swift */,
 				0AD0E595260D1B8500162BA3 /* SearchViewController.swift */,
 				0439A6FB2607A98D001E8955 /* Main.storyboard */,
+				0AC75725265138A000284EA6 /* LoginView.swift */,
 				0439A6FE2607A990001E8955 /* Assets.xcassets */,
 				0439A7002607A990001E8955 /* LaunchScreen.storyboard */,
 				0439A7032607A990001E8955 /* Info.plist */,
@@ -259,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0439A7022607A990001E8955 /* LaunchScreen.storyboard in Resources */,
+				0AC7572926515EBA00284EA6 /* GoogleService-Info.plist in Resources */,
 				0439A6FF2607A990001E8955 /* Assets.xcassets in Resources */,
 				0439A6FD2607A98D001E8955 /* Main.storyboard in Resources */,
 			);
@@ -319,12 +350,15 @@
 				04F1DEF9262330D800976BBA /* PosterProtocols.swift in Sources */,
 				04F1DF0526233B1000976BBA /* PosterServiceModel.swift in Sources */,
 				0AD0E5F926357D7800162BA3 /* MapContainer.swift in Sources */,
+				0AC757222651336200284EA6 /* ProfileViewController.swift in Sources */,
 				0AD0E5FC2635885700162BA3 /* MapPlace.swift in Sources */,
 				04F1DF012623397800976BBA /* PosterModelLoader.swift in Sources */,
 				04F1DEFB262330D800976BBA /* PosterContainer.swift in Sources */,
+				0AC757272651399E00284EA6 /* LoginView.swift in Sources */,
 				0AD0E60526359C4E00162BA3 /* MapLoaderModel.swift in Sources */,
 				0AD0E5F426357D7800162BA3 /* MapPresenter.swift in Sources */,
 				0AD0E5F626357D7800162BA3 /* MapViewController.swift in Sources */,
+				0AC75731265178A900284EA6 /* ProfileView.swift in Sources */,
 				04F1DEFA262330D800976BBA /* PosterInteractor.swift in Sources */,
 				0AD0E596260D1B8500162BA3 /* SearchViewController.swift in Sources */,
 				04F1DEFE262330FA00976BBA /* PosterViewModel.swift in Sources */,
@@ -332,17 +366,25 @@
 				0498F7B726515F1E0052BF89 /* FilterView.swift in Sources */,
 				0498F7BE265478BD0052BF89 /* CustomButton.swift in Sources */,
 				0AD0E5F826357D7800162BA3 /* MapInteractor.swift in Sources */,
+				0AC7573326517E7D00284EA6 /* RegistrationViewController.swift in Sources */,
 				0AD0E5F726357D7800162BA3 /* MapProtocols.swift in Sources */,
 				0439A6F62607A98D001E8955 /* AppDelegate.swift in Sources */,
 				04F1DF4F26360BD800976BBA /* DetailsViewController.swift in Sources */,
 				0439A6F82607A98D001E8955 /* SceneDelegate.swift in Sources */,
+				0AC7571C2651325100284EA6 /* ProfilePresenter.swift in Sources */,
+				0AC7572B2651652F00284EA6 /* RegistrationView.swift in Sources */,
 				04F1DEF6262330D800976BBA /* PosterPresenter.swift in Sources */,
+
 				0AD0E599260D1BFD00162BA3 /* ProfileViewController.swift in Sources */,
 				0498F7BA265161820052BF89 /* FilterViewController.swift in Sources */,
+				0AC757202651325100284EA6 /* ProfileContainer.swift in Sources */,
+				0AC7571D2651325100284EA6 /* ProfileRouter.swift in Sources */,
 				0AD0E60226359BEB00162BA3 /* MapManager.swift in Sources */,
+				0AC7571E2651325100284EA6 /* ProfileProtocols.swift in Sources */,
 				04F1DEF7262330D800976BBA /* PosterRouter.swift in Sources */,
 				04F1DF5226360BFF00976BBA /* DetailView.swift in Sources */,
 				0AD0E5CF262C21D000162BA3 /* PosterManager.swift in Sources */,
+				0AC7571F2651325100284EA6 /* ProfileInteractor.swift in Sources */,
 				0AD0E5F526357D7800162BA3 /* MapRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

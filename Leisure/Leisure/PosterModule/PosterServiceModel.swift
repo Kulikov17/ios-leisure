@@ -7,6 +7,19 @@ struct PosterResults: Codable {
     struct Image: Codable {
         let image: String?
     }
+    
+    struct Dates:Codable {
+        let start_date: String?
+        let start_time: String?
+        let start: Int?
+        let end_date: String?
+        let end_time: String?
+        let end: Int?
+        let is_endless: Bool
+        let is_startless: Bool
+    }
+    
+    //let dates: [Dates]
     let title: String
     let short_title: String
     let place: Place?
@@ -18,8 +31,11 @@ struct PosterResults: Codable {
     let images: [Image]
     let site_url: String?
     
+    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
+        //dates = try container.decode([Dates].self, forKey: .dates)
+        //print(dates)
         title = try container.decode(String.self, forKey: .title)
         short_title = try container.decode(String.self, forKey: .short_title)
         place = try container.decode(Place?.self, forKey: .place)

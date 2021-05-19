@@ -31,7 +31,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let mapViewController = UINavigationController(rootViewController: mapViewControllerFromContainer)
         mapViewController.setNavigationBarHidden(true, animated: false)
         
-        let profileViewController = UINavigationController(rootViewController: ProfileViewController())
+        let profileContainer = ProfileContainer.assemble()
+        let profileViewControllerFromContainer = profileContainer.viewController
+        let profileViewController = UINavigationController(rootViewController: profileViewControllerFromContainer)
     
         posterViewController.title = "Афиша"
         searchViewController.title = "Поиск"

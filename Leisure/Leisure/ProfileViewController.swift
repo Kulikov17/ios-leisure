@@ -1,23 +1,44 @@
 import UIKit
+import PinLayout
 
-class ProfileViewController: UIViewController {
+final class ProfileViewController: UIViewController {
+    private let output: ProfileViewOutput
+    
+    private let loginView: LoginView
+    private let profileView: ProfileView
+    private let registrationView: RegistrationView
+    
+    init(output: ProfileViewOutput) {
+        self.output = output
+        self.loginView = LoginView(output: self.output)
+        self.profileView = ProfileView(output: self.output)
+        self.registrationView = RegistrationView(output: self.output)
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    @available(*, unavailable)
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .green
-        title = "Профиль"
-        // Do any additional setup after loading the view.
+        
+        [loginView, registrationView, profileView].forEach {
+            view.addSubview($0)
+        }
+        
+        view.subviews.forEach { subview in
+            subview.isHidden = false
+        }
+        
+        output.didLoadView()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
     }
-    */
+}
 
+extension ProfileViewController: ProfileViewInput {
 }

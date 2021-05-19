@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>131545602349-fqlnt1jkhe46ncufson7kt2717n2llj7.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.131545602349-fqlnt1jkhe46ncufson7kt2717n2llj7</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDkN2z8kuBreXfte71LAhFV1zzbsWo6X6s</string>
+	<key>GCM_SENDER_ID</key>
+	<string>131545602349</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>ru.Leisure</string>
+	<key>PROJECT_ID</key>
+	<string>leisure-18c1e</string>
+	<key>STORAGE_BUCKET</key>
+	<string>leisure-18c1e.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:131545602349:ios:9524da053e9a2d9ce9dba4</string>
+</dict>
+</plist>

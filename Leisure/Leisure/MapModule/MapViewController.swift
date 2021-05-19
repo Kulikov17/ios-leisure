@@ -1,11 +1,3 @@
-//
-//  MapViewController.swift
-//  Leisure
-//
-//  Created by Дмитрий Куликов on 25.04.2021.
-//  
-//
-
 import UIKit
 import MapKit
 

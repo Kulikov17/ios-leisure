@@ -7,7 +7,7 @@ final class PosterInteractor {
 }
 
 extension PosterInteractor: PosterInteractorInput {
-    func load(posters: [PosterServiceInfo]) {
+    func load(posters: PosterServiceInfo) {
         postersManager.load(posters: posters) { [weak self] (result) in
             DispatchQueue.main.async {
                 switch result {

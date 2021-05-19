@@ -14,6 +14,7 @@ final class PosterContainer {
 		let viewController = PosterViewController(output: presenter)
 
         router.sourceViewController = viewController
+        router.sourcePresenter = presenter
 		presenter.view = viewController
 		interactor.output = presenter
 

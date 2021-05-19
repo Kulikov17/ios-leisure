@@ -21,6 +21,6 @@ class DetailsViewController: UIViewController {
     }
     
     override func loadView() {
-        view = DetailView(poster: poster ?? PosterViewModel(address: "", short_title: "", title: "", description: "", category: "", price: "", is_free: false, image: "", age_restriction: "", site_url: ""))
+        view = DetailView(poster: poster ?? PosterViewModel(address: "", short_title: "", title: "", description: "", category: [], price: "", is_free: false, image: "", age_restriction: "", site_url: ""))
         }
 }

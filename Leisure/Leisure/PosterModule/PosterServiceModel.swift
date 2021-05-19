@@ -7,24 +7,50 @@ struct PosterResults: Codable {
     struct Image: Codable {
         let image: String?
     }
+    
+    struct Dates:Codable {
+        let start_date: String?
+        let start_time: String?
+        let start: Int?
+        let end_date: String?
+        let end_time: String?
+        let end: Int?
+        let is_endless: Bool
+        let is_startless: Bool
+    }
+    
+    //let dates: [Dates]
     let title: String
     let short_title: String
     let place: Place?
     let description: String
-    let categories: [String]
+    var categories: [String]
     let age_restriction: String?
     let price: String?
     let is_free: Bool
     let images: [Image]
     let site_url: String?
     
+    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
+        //dates = try container.decode([Dates].self, forKey: .dates)
+        //print(dates)
         title = try container.decode(String.self, forKey: .title)
         short_title = try container.decode(String.self, forKey: .short_title)
         place = try container.decode(Place?.self, forKey: .place)
         description = try container.decode(String.self, forKey: .description)
-        categories = try container.decode([String].self, forKey: .categories)
+        let categories_dict = ["business-events": "События для бизнеса", "cinema": " Кино", "concert": "Концерты", "education": "Обучение",
+                               "entertainment": "Развлечения", "exhibition": "Выставки", "fashion": "Мода и стиль", "festival": "Фестивали",
+                               "holiday": "Праздники", "kids": "Детям", "other": "Разное", "party": "Вечеринки", "photo": "Фотография", "quest": "Квесты",
+                               "recreation": "Отдых", "shopping": "Шопинг", "social-activity": "Благотворительность", "theater": "Спектакли",
+                               "tour": "Экскурсии", "yarmarki-razvlecheniya-yarmarki": "Ярмарки" ]
+        
+        let raw_categories = try container.decode([String].self, forKey: .categories)
+        categories = []
+        for categ in raw_categories{
+            categories.append(categories_dict[categ] ?? "Разное")
+        }
         
         do {
             age_restriction = try String(container.decode(Int.self, forKey: .age_restriction))

@@ -1,18 +1,19 @@
 import Foundation
 
-protocol MapViewInput: class {
+protocol MapViewInput: AnyObject {
     func reloadData()
 }
 
 protocol MapViewOutput: AnyObject {
-     var mapPlaces: [MapPlace] { get }
+    var mapPlaces: [MapPlace] { get }
     
-     func didLoadView()
-     func didPullRefresh()
+    func didLoadView()
+    func didPullRefresh()
+    func didTapCell(poster: PosterViewModel)
 }
 
 protocol MapInteractorInput: AnyObject {
-    func load(places: [MapServiceInfo])
+    func load(places: MapServiceInfo)
 }
 
 protocol MapInteractorOutput: AnyObject {
@@ -20,5 +21,6 @@ protocol MapInteractorOutput: AnyObject {
     func didReceive(error: Error)
 }
 
-protocol MapRouterInput: class {
+protocol MapRouterInput: AnyObject {
+    func showPoster(model: PosterViewModel)
 }

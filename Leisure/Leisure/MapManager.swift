@@ -5,7 +5,7 @@ enum MapNetworkError: Error {
 }
 
 protocol MapManagerDescription: AnyObject {
-    func load(places: [MapServiceInfo], completion: @escaping (Result<[MapResults], Error>) -> Void)
+    func load(places: MapServiceInfo, completion: @escaping (Result<[MapResults], Error>) -> Void)
 }
 
 final class MapManager: MapManagerDescription {
@@ -14,7 +14,7 @@ final class MapManager: MapManagerDescription {
     
     private init() {}
     
-    func load(places: [MapServiceInfo], completion: @escaping (Result<[MapResults], Error>) -> Void) {
+    func load(places: MapServiceInfo, completion: @escaping (Result<[MapResults], Error>) -> Void) {
         let loader = MapServiceLoader(places: places)
         let urlString = loader.mapInfoUrl()
                 

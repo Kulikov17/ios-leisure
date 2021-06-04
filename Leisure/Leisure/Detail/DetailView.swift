@@ -1,6 +1,8 @@
 import UIKit
 import Kingfisher
 import PinLayout
+import Firebase
+import FirebaseDatabase
 
 class DetailView: UIView {
     private var poster: PosterViewModel?
@@ -46,6 +48,7 @@ class DetailView: UIView {
         addressLabel.font = .systemFont(ofSize: 16, weight: .semibold)
         priceLabel.font = .systemFont(ofSize: 16, weight: .semibold)
         descriptionLabel.font = .systemFont(ofSize: 17, weight: .light)
+        descriptionLabel.isEditable = false
         buttonUrl.setTitle("Перейти на сайт", for: .normal)
         buttonUrl.setTitleColor(.systemGray6,for: .normal)
         buttonUrl.addTarget(self,action: #selector(buttonUrlAction),
@@ -57,7 +60,15 @@ class DetailView: UIView {
         
         categoryLabel.font = .systemFont(ofSize: 15, weight: .thin)
         categoryLabel.textColor = .red
+        categoryLabel.isEditable = false
       
+       
+        buttonFavorites.setTitleColor(.systemGray6,for: .normal)
+        buttonFavorites.addTarget(self,action: #selector(buttonFavoritesAction),
+                         for: .touchUpInside)
+        
+        buttonFavorites.backgroundColor = #colorLiteral(red: 0.4392156899, green:
+                                                    0.01176470611, blue: 0.1921568662, alpha: 0.8)
 //        buttonFavorites.setImage(UIImage(named: "aibo.png"), for: .normal)
 //             // for Highlighted state
 //        buttonFavorites.setImage(UIImage(named: "bmth.png"), for: .highlighted)
@@ -66,7 +77,7 @@ class DetailView: UIView {
 //        buttonFavorites.setImage(UIImage(named: "bpb.png"), for: .reserved)
         
         
-        [titleLabel, addressLabel, descriptionLabel, priceLabel, iconImageView, buttonUrl, ageRestrictionLabel, categoryLabel].forEach {
+        [titleLabel, addressLabel, descriptionLabel, priceLabel, iconImageView, buttonUrl, buttonFavorites, ageRestrictionLabel, categoryLabel].forEach {
             containerView.addSubview($0)
         }
         self.addSubview(containerView)
@@ -137,7 +148,15 @@ class DetailView: UIView {
             .left(10)
             .right(10)
             .sizeToFit(.width)
+        
+        buttonFavorites.pin
+            .below(of: categoryLabel)
+            .margin(10)
+            .left(10)
+            .right(10)
+            .sizeToFit(.width)
     }
+    
     
     func description_standartization(description: String) -> String{
         guard let startOfStr = description.firstIndex(of: ">") else { return description }
@@ -180,7 +199,28 @@ class DetailView: UIView {
         for category in poster?.category ?? [] {
             categoryLabel.text! += category + "  "
         }
-
+        
+        Auth.auth().addStateDidChangeListener { (auth, user)  in
+            if user != nil {
+                self.buttonFavorites.isHidden = false
+                let ref = Database.database(url: "https://leisure-18c1e-default-rtdb.europe-west1.firebasedatabase.app").reference()
+                
+                let groupsRef = ref.child("users/"+user!.uid + "/groups/" + "\(self.poster!.id)")
+                
+                groupsRef.observeSingleEvent(of: .value)
+                { (snapshot) in
+                    let name = snapshot.value as? [String: Any]
+                    print(name)
+                    if (name != nil) {
+                        self.buttonFavorites.setTitle("Удалить из избранного", for: .normal)
+                    } else {
+                        self.buttonFavorites.setTitle("Добавить в избранное", for: .normal)
+                    }
+                }
+            } else {
+                self.buttonFavorites.isHidden = true
+            }
+        }
     }
     
     @objc
@@ -193,6 +233,27 @@ class DetailView: UIView {
     
     @objc
     func buttonFavoritesAction() {
-        print("Button Favorites pressed")
+        Auth.auth().addStateDidChangeListener { (auth, user)  in
+            if user != nil {
+                let ref = Database.database(url: "https://leisure-18c1e-default-rtdb.europe-west1.firebasedatabase.app").reference()
+                
+                let groupsRef = ref.child("users/"+user!.uid + "/groups/")
+                
+                if (self.buttonFavorites.currentTitle == "Добавить в избранное") {
+                    let newPost = ["id": "\(self.poster!.id)", "address": self.poster!.address, "short_title" : self.poster!.short_title,
+                        "title" : self.poster!.title, "description" : self.poster!.description, "category" : self.poster!.category,
+                        "price": self.poster!.price, "is_free": "\(self.poster!.is_free)",
+                        "image": self.poster!.image, "age_restriction": self.poster!.age_restriction, "site_url": self.poster!.site_url]
+                    
+                    
+                
+                    groupsRef.child("\(self.poster!.id)").setValue(newPost)
+                    self.buttonFavorites.setTitle("Удалить из избранного", for: .normal)
+                } else {
+                    groupsRef.child("\(self.poster!.id)").removeValue()
+                    self.buttonFavorites.setTitle("Добавить в избранное", for: .normal)
+                }
+            }
+        }
     }
 }

@@ -281,7 +281,7 @@ class FilterView: UIView {
             }
         }
         self.presenter.setCategories(categories: categories)
-        print(categories)
+        //print(categories)
         self.presenter.didPullRefresh()
     }
 }

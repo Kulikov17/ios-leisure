@@ -3,13 +3,13 @@ import Foundation
 import UIKit
 import PinLayout
 
-final class RegistrationViewController: UIViewController {
+final class LoginViewController: UIViewController {
     private let output: ProfileViewOutput
-    private let registrationView: RegistrationView
+    private let loginView: LoginView
     
     init(output: ProfileViewOutput) {
         self.output = output
-        self.registrationView = RegistrationView(output: output)
+        self.loginView = LoginView(output: output)
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -20,11 +20,11 @@ final class RegistrationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(registrationView)
+        view.addSubview(loginView)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
+    
 }
-

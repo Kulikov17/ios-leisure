@@ -1,4 +1,5 @@
 import Foundation
+import Firebase
 
 final class ProfilePresenter {
 	weak var view: ProfileViewInput?
@@ -13,8 +14,13 @@ final class ProfilePresenter {
 }
 
 extension ProfilePresenter: ProfileViewOutput {
-    func didTapBack() {
-        self.router.showLoginView()
+
+    func didLoadPosterView() {
+        self.router.showPosterView()
+    }
+    
+    func didTapExitAuth() {
+        self.view?.closeLoginView()
     }
     
     func didTapLogin(login: String, password: String) {
@@ -23,29 +29,37 @@ extension ProfilePresenter: ProfileViewOutput {
     
     func didTapLogout() {
         self.interactor.logout()
+        self.view?.closeProfileView()
     }
     
     func didLoadView() {
-        self.interactor.checkAuth()
+        Auth.auth().addStateDidChangeListener { (auth, user)  in
+            if user != nil {
+                self.view?.showProfileView()
+            } else {
+                self.view?.showLoginView()
+            }
+        }
     }
     
-    func didTapSignUp() {
-        self.router.showRegistrationView()
+    func didTapCreateUser(login: String, password: String) {
+        self.interactor.createUser(login: login, password: password)
     }
     
-    func didTapCreateUser(user: String, login: String, password: String) {
-        self.interactor.createUser(user: user, login: login, password: password)
+    func didLoadProfileView(info: String) {
+        self.view?.showProfileView()
     }
 }
 
 extension ProfilePresenter: ProfileInteractorOutput {
     
-    func didLoadProfileView() {
-        self.router.showAccountView()
+    func didReceive(error: String) {
+        view?.showAlertErrorMessage(with: error)
     }
     
-    func didLoadLoginView() {
-        self.router.showLoginView()
+    
+    func didLoadProfileView() {
+        self.view?.showProfileView()
     }
     
 }

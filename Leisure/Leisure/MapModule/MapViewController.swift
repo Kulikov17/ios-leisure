@@ -2,6 +2,7 @@ import UIKit
 import MapKit
 
 final class MapViewController: UIViewController, MKMapViewDelegate {
+    private var curPlace: String = ""
 	private let output: MapViewOutput
     private let mapView = MKMapView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height))
     
@@ -75,4 +76,9 @@ extension MapViewController {
     }
     return view
   }
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        let place = view.annotation as! MapPlace
+        output.didTapCell(poster: place.poster)
+    }
+    
 }

@@ -20,6 +20,7 @@ struct PosterResults: Codable {
     }
     
     //let dates: [Dates]
+    let id: Int
     let title: String
     let short_title: String
     let place: Place?
@@ -36,6 +37,7 @@ struct PosterResults: Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         //dates = try container.decode([Dates].self, forKey: .dates)
         //print(dates)
+        id = try container.decode(Int.self, forKey: .id)
         title = try container.decode(String.self, forKey: .title)
         short_title = try container.decode(String.self, forKey: .short_title)
         place = try container.decode(Place?.self, forKey: .place)

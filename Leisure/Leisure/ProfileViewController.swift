@@ -4,15 +4,13 @@ import PinLayout
 final class ProfileViewController: UIViewController {
     private let output: ProfileViewOutput
     
-    private let loginView: LoginView
     private let profileView: ProfileView
-    private let registrationView: RegistrationView
+    
+    private var nav = UINavigationController()
     
     init(output: ProfileViewOutput) {
         self.output = output
-        self.loginView = LoginView(output: self.output)
         self.profileView = ProfileView(output: self.output)
-        self.registrationView = RegistrationView(output: self.output)
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -23,22 +21,52 @@ final class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        [loginView, registrationView, profileView].forEach {
-            view.addSubview($0)
-        }
-        
-        view.subviews.forEach { subview in
-            subview.isHidden = false
-        }
-        
+        view.backgroundColor = .systemBackground
         output.didLoadView()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        output.didLoadView()
+    }
 }
 
 extension ProfileViewController: ProfileViewInput {
+    
+    func showLoginView() {
+        let loginViewController = LoginViewController(output: self.output)
+        let navigationController = UINavigationController(rootViewController: loginViewController)
+        navigationController.modalPresentationStyle = .fullScreen
+        self.nav = navigationController
+        
+        present(navigationController, animated: true, completion: nil)
+       
+    }
+    
+    func showAlertErrorMessage(with message: String) {
+        let alert = UIAlertController(title: "Ошибка", message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.nav.present(alert, animated: false, completion: nil)
+        
+    }
+    
+    func closeLoginView() {
+        self.dismiss(animated: true, completion: nil)
+        self.output.didLoadPosterView()
+    }
+    
+    func showProfileView() {
+        self.dismiss(animated: true, completion: nil)
+        view = ProfileView(output: self.output)
+    }
+    
+    func closeProfileView() {
+        view = UIView()
+        view.backgroundColor = .systemBackground
+    }
+    
 }

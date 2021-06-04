@@ -22,37 +22,36 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let posterViewController = UINavigationController(rootViewController: posterViewControllerFromContainer)
         
-        let searchViewController = UINavigationController(rootViewController: SearchViewController())
-        let eventsViewController = UINavigationController(rootViewController: EventsViewController())
+        let favoritesContainer = FavoritesContainer.assemble(with: tabBarViewController)
+        let favoritesViewControllerFromContainer = favoritesContainer.viewController
+        let favoritesViewController = UINavigationController(rootViewController: favoritesViewControllerFromContainer)
         
         let mapContainer = MapContainer.assemble()
         let mapViewControllerFromContainer = mapContainer.viewController
         
         let mapViewController = UINavigationController(rootViewController: mapViewControllerFromContainer)
-        mapViewController.setNavigationBarHidden(true, animated: false)
+        //mapViewController.setNavigationBarHidden(true, animated: false)
         
-        let profileContainer = ProfileContainer.assemble()
+        let profileContainer = ProfileContainer.assemble(with: tabBarViewController)
         let profileViewControllerFromContainer = profileContainer.viewController
         let profileViewController = UINavigationController(rootViewController: profileViewControllerFromContainer)
     
         posterViewController.title = "Афиша"
-        searchViewController.title = "Поиск"
-        eventsViewController.title = "События"
+        favoritesViewController.title = "Избранное"
         mapViewController.title = "Карта"
         profileViewController.title = "Профиль"
         
-        tabBarViewController.setViewControllers([posterViewController, searchViewController, eventsViewController, mapViewController, profileViewController], animated: false)
+        tabBarViewController.setViewControllers([posterViewController, favoritesViewController, mapViewController, profileViewController], animated: false)
         
         guard let items = tabBarViewController.tabBar.items else {
             return
         }
         
-        let images = ["star", "magnifyingglass", "calendar", "map", "person.crop.circle"]
+        let images = ["calendar", "star", "map", "person.crop.circle"]
         for i in 0..<items.count {
             items[i].image = UIImage(systemName: images[i])
         }
-        //tabBarVC.modalPresentationStyle = .fullScreen
-       // present(tabBarVC, animated: true)
+        
         
         window.rootViewController = navigationController
         

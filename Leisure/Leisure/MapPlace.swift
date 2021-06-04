@@ -2,25 +2,21 @@ import MapKit
 
 class MapPlace: NSObject, MKAnnotation {
   let title: String?
-  let locationName: String?
-  let discipline: String?
+  let subtitle: String?
   let coordinate: CLLocationCoordinate2D
+  let poster: PosterViewModel
 
   init(
     title: String?,
-    locationName: String?,
-    discipline: String?,
-    coordinate: CLLocationCoordinate2D
+    subtitle: String?,
+    coordinate: CLLocationCoordinate2D,
+    poster: PosterViewModel
   ) {
     self.title = title
-    self.locationName = locationName
-    self.discipline = discipline
+    self.subtitle = subtitle
     self.coordinate = coordinate
+    self.poster = poster
 
     super.init()
-  }
-
-  var subtitle: String? {
-    return locationName
   }
 }

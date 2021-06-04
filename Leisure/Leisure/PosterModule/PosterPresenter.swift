@@ -49,7 +49,6 @@ extension PosterPresenter: PosterViewOutput {
     }
     
     func setCategories(categories: [String]){
-        
         self.categories = categories
         setLocationService(location: "msk", categories: categories)
     }
@@ -58,7 +57,7 @@ extension PosterPresenter: PosterViewOutput {
 extension PosterPresenter: PosterInteractorOutput {
     func didLoad(posters: [PosterResults]) {
         let postersViewModels = posters.map { poster in
-            return PosterViewModel(address: poster.place?.address, short_title: poster.short_title,  title: poster.title, description: poster.description, category: poster.categories, price: poster.price, is_free: poster.is_free, image: poster.images[0].image ?? "", age_restriction: poster.age_restriction as Any, site_url: poster.site_url ?? "" )
+            return PosterViewModel(id: poster.id, address: poster.place?.address, short_title: poster.short_title,  title: poster.title, description: poster.description, category: poster.categories, price: poster.price, is_free: poster.is_free, image: poster.images[0].image ?? "", age_restriction: poster.age_restriction as Any, site_url: poster.site_url ?? "" )
            
         }
            

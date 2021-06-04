@@ -22,8 +22,8 @@ final class MapContainer {
 		let viewController = MapViewController(output: presenter)
 
 		presenter.view = viewController
-
 		interactor.output = presenter
+        router.sourceViewController = viewController
 
         return MapContainer(view: viewController)
 	}

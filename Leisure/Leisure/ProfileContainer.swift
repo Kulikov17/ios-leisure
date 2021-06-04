@@ -7,7 +7,7 @@ final class ProfileContainer {
         self.viewController = view
     }
 
-	class func assemble() -> ProfileContainer {
+    class func assemble(with: UITabBarController) -> ProfileContainer {
         let router = ProfileRouter()
         let interactor = ProfileInteractor()
         let presenter = ProfilePresenter(router: router, interactor: interactor)
@@ -15,8 +15,7 @@ final class ProfileContainer {
 
 		presenter.view = viewController
 		interactor.output = presenter
-        router.sourceViewController = viewController
-        router.soursePresenter = presenter
+        router.sourceTabBarController = with
 
         return ProfileContainer(view: viewController)
 	}

@@ -7,7 +7,7 @@ final class MapInteractor {
 }
 
 extension MapInteractor: MapInteractorInput {
-    func load(places: [MapServiceInfo]) {
+    func load(places: MapServiceInfo) {
         mapManager.load(places: places) { [weak self] (result) in
             DispatchQueue.main.async {
                 switch result {

@@ -1,6 +1,7 @@
 import Foundation
 
 struct PosterViewModel {
+    let id: Int
     let address: String?
     let short_title: String
     let title: String
